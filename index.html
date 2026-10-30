@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de CSS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- Menu -->
+    <nav class="navbar menu">
+        <div class="container">
+            <span class="navbar-brand">TEMAS CSS</span>
+        </div>
+    </nav>
+
+    <!-- Portada -->
+    <header class="portada text-center">
+        <h1>Aprende CSS</h1>
+        <p>Temas básicos de CSS</p>
+    </header>
+
+    <!-- Temas -->
+    <main class="container py-4">
+        <div class="row g-3">
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5>2.1 Estructura y sintaxis</h5>
+                        <p class="componente">Card</p>
+                        <p>selector { propiedad: valor; }</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5>2.2 Tipos de incorporación</h5>
+                        <p class="componente">List group</p>
+                        <ul class="list-group">
+                            <li class="list-group-item">Interno</li>
+                            <li class="list-group-item">Externo</li>
+                            <li class="list-group-item">En línea</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5>2.3 Indentación, herencia y comentarios</h5>
+                        <p class="componente">Badges</p>
+                        <span class="badge etiqueta">Indentación</span>
+                        <span class="badge etiqueta">Herencia</span>
+                        <span class="badge etiqueta">Comentarios</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5>2.4 Niveles de especificidad</h5>
+                        <p class="componente">Table</p>
+                        <table class="table table-sm">
+                            <tr><td>En línea</td><td>1000</td></tr>
+                            <tr><td>ID</td><td>100</td></tr>
+                            <tr><td>Clase</td><td>10</td></tr>
+                            <tr><td>Etiqueta</td><td>1</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5>2.5 Flexbox, Grid y Breakpoints</h5>
+                        <p class="componente">Grid</p>
+                        <div class="row g-2 text-center">
+                            <div class="col-6"><div class="caja">1</div></div>
+                            <div class="col-6"><div class="caja">2</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5>2.6 Media queries</h5>
+                        <p class="componente">Alert</p>
+                        <div class="alert aviso">Cambia el tamaño de la ventana.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5>2.7 Pseudo-elementos</h5>
+                        <p class="componente">Blockquote</p>
+                        <blockquote class="blockquote cita">
+                            <p>Texto con comillas</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5>2.8 Pseudo-clases</h5>
+                        <p class="componente">Button</p>
+                        <button class="btn boton">Pasa el mouse</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5>2.9 Z-index</h5>
+                        <p class="componente">Modal</p>
+                        <button class="btn boton" data-bs-toggle="modal" data-bs-target="#ventana">Abrir modal</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="ventana">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Z-index</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">El modal queda encima de todo.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie -->
+    <footer class="pie text-center py-3">Proyecto CSS - ADSO</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

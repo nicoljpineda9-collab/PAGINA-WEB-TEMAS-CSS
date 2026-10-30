@@ -1,0 +1,74 @@
+body {
+    background-color: #FFF8F3;
+    color: #5A4A5E;
+}
+
+.menu {
+    background-color: #F8C8DC;
+}
+
+.portada {
+    background-color: #D7C4F2;
+    padding: 30px 0;
+}
+
+.card {
+    border: 2px solid #F8C8DC;
+    border-radius: 15px;
+}
+
+.componente {
+    color: #E58FB1;
+    font-size: 14px;
+}
+
+.etiqueta {
+    background-color: #D7C4F2;
+    color: #5A4A5E;
+}
+
+.caja {
+    background-color: #FFD9C0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.aviso {
+    background-color: #C9F2E3;
+}
+
+/* Pseudo-elementos */
+.cita p::before {
+    content: "“";
+}
+
+.cita p::after {
+    content: "”";
+}
+
+/* Pseudo-clases */
+.boton {
+    background-color: #F8C8DC;
+}
+
+.boton:hover {
+    background-color: #E58FB1;
+    color: white;
+}
+
+.pie {
+    background-color: #F8C8DC;
+}
+
+/* Media queries */
+@media (min-width: 768px) {
+    .portada {
+        padding: 50px 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .portada {
+        padding: 70px 0;
+    }
+}
