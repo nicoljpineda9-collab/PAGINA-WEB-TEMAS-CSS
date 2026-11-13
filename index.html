@@ -16,567 +16,669 @@
     <!-- Mis estilos -->
     <link rel="stylesheet" href="estilos.css">
 </head>
-<body data-bs-spy="scroll" data-bs-target="#menuPrincipal" data-bs-offset="90" tabindex="0">
+<body>
 
-    <!-- ===== MENÚ ===== -->
-    <nav class="navbar navbar-expand-lg menu sticky-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="#inicio"><i class="bi bi-code-slash"></i> Guía CSS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-label="Abrir menú">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="menuPrincipal">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contenido">Contenido</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Temas</a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#tema1">2.1 Estructura y sintaxis</a></li>
-                            <li><a class="dropdown-item" href="#tema2">2.2 Tipos de incorporación</a></li>
-                            <li><a class="dropdown-item" href="#tema3">2.3 Indentación, herencia y comentarios</a></li>
-                            <li><a class="dropdown-item" href="#tema4">2.4 Niveles de especificidad</a></li>
-                            <li><a class="dropdown-item" href="#tema5">2.5 Flexbox, Grid y Breakpoints</a></li>
-                            <li><a class="dropdown-item" href="#tema6">2.6 Media queries</a></li>
-                            <li><a class="dropdown-item" href="#tema7">2.7 Pseudo-elementos</a></li>
-                            <li><a class="dropdown-item" href="#tema8">2.8 Pseudo-clases</a></li>
-                            <li><a class="dropdown-item" href="#tema9">2.9 Z-index</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="#resumen">Resumen</a></li>
-                </ul>
+    <!-- ===== BARRA SUPERIOR ===== -->
+    <nav class="navbar menu sticky-top shadow-sm">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center gap-2">
+                <button class="btn boton btn-sm d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#indice" aria-controls="indice">
+                    <i class="bi bi-list"></i> Índice
+                </button>
+                <a class="navbar-brand m-0" href="#p-inicio" data-ir="p-inicio"><i class="bi bi-code-slash"></i> Guía CSS</a>
+            </div>
+            <div>
+                <span class="badge etiqueta d-md-none">Móvil</span>
+                <span class="badge etiqueta d-none d-md-inline d-lg-none">Tablet</span>
+                <span class="badge etiqueta d-none d-lg-inline">Computador</span>
             </div>
         </div>
     </nav>
 
-    <!-- ===== PORTADA (CARRUSEL) ===== -->
-    <header id="inicio">
-        <div id="carrusel" class="carousel slide carrusel" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carrusel" data-bs-slide-to="0" class="active" aria-label="Diapositiva 1"></button>
-                <button type="button" data-bs-target="#carrusel" data-bs-slide-to="1" aria-label="Diapositiva 2"></button>
-                <button type="button" data-bs-target="#carrusel" data-bs-slide-to="2" aria-label="Diapositiva 3"></button>
-            </div>
+    <div class="container-fluid p-0">
+        <div class="row g-0">
 
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://picsum.photos/seed/css-portada-1/1600/700" class="d-block w-100" alt="Imagen de portada 1">
-                    <div class="carousel-caption">
-                        <h1>Aprende CSS paso a paso</h1>
-                        <p class="d-none d-md-block">Nueve temas explicados con ejemplos y componentes de Bootstrap.</p>
-                        <a href="#contenido" class="btn boton">Ver contenido</a>
+            <!-- ===== ÍNDICE LATERAL ===== -->
+            <aside class="col-lg-3 col-xl-2 barra-lateral">
+                <div class="offcanvas-lg offcanvas-start indice-caja" tabindex="-1" id="indice" aria-labelledby="tituloIndice">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="tituloIndice">Índice de temas</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#indice" aria-label="Cerrar"></button>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://picsum.photos/seed/css-portada-2/1600/700" class="d-block w-100" alt="Imagen de portada 2">
-                    <div class="carousel-caption">
-                        <h2 class="h1">Diseño responsive</h2>
-                        <p class="d-none d-md-block">Una sola página que se adapta a móvil, tablet y computador.</p>
-                        <a href="#tema6" class="btn boton">Ir a media queries</a>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://picsum.photos/seed/css-portada-3/1600/700" class="d-block w-100" alt="Imagen de portada 3">
-                    <div class="carousel-caption">
-                        <h2 class="h1">Ejemplos en vivo</h2>
-                        <p class="d-none d-md-block">Prueba el flexbox, las capas y las pseudo-clases directamente en la página.</p>
-                        <a href="#tema5" class="btn boton">Ir a flexbox</a>
-                    </div>
-                </div>
-            </div>
 
-            <button class="carousel-control-prev" type="button" data-bs-target="#carrusel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carrusel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
-        </div>
-    </header>
+                    <div class="offcanvas-body flex-column p-3">
+                        <p class="indice-titulo d-none d-lg-block">Índice de temas</p>
+                        <input type="search" id="buscar" class="form-control form-control-sm mb-3" placeholder="Buscar tema...">
 
-    <!-- ===== FRANJA DE DATOS ===== -->
-    <section class="franja py-4">
-        <div class="container">
-            <div class="row text-center g-3 align-items-center">
-                <div class="col-6 col-md-3"><div class="dato">9</div><p class="m-0">Temas</p></div>
-                <div class="col-6 col-md-3"><div class="dato">3</div><p class="m-0">Dispositivos</p></div>
-                <div class="col-6 col-md-3"><div class="dato">5.3</div><p class="m-0">Versión de Bootstrap</p></div>
-                <div class="col-6 col-md-3">
-                    <span class="badge etiqueta d-md-none">Estás viendo: Móvil</span>
-                    <span class="badge etiqueta d-none d-md-inline d-lg-none">Estás viendo: Tablet</span>
-                    <span class="badge etiqueta d-none d-lg-inline">Estás viendo: Computador</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CONTENIDO ===== -->
-    <section class="py-5" id="contenido">
-        <div class="container">
-            <h2 class="titulo-seccion">Contenido</h2>
-            <p class="mb-4">Elige un tema para ir directo a su explicación.</p>
-
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-
-                <div class="col">
-                    <div class="card tarjeta-tema h-100">
-                        <img src="https://picsum.photos/seed/tema1/600/320" class="card-img-top" alt="Tema 2.1" loading="lazy">
-                        <div class="card-body">
-                            <span class="numero">2.1</span>
-                            <h5 class="card-title mt-2">Estructura y sintaxis</h5>
-                            <p class="card-text">Cómo se escribe una regla: selector, propiedad y valor.</p>
+                        <div class="nav flex-column nav-pills indice" id="indice-tabs" role="tablist">
+                            <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#p-inicio" type="button" role="tab">
+                                <i class="bi bi-house-door"></i> Inicio
+                            </button>
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-1" type="button" role="tab" data-claves="selector propiedad valor regla llaves colores unidades">
+                                <span class="num">2.1</span> Estructura y sintaxis
+                            </button>
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-2" type="button" role="tab" data-claves="interno externo en línea style link">
+                                <span class="num">2.2</span> Tipos de incorporación
+                            </button>
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-3" type="button" role="tab" data-claves="indentación herencia comentarios inherit">
+                                <span class="num">2.3</span> Indentación, herencia y comentarios
+                            </button>
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-4" type="button" role="tab" data-claves="especificidad important prioridad id clase">
+                                <span class="num">2.4</span> Niveles de especificidad
+                            </button>
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-5" type="button" role="tab" data-claves="flexbox grid breakpoints columnas">
+                                <span class="num">2.5</span> Flexbox, Grid y Breakpoints
+                            </button>
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-6" type="button" role="tab" data-claves="media queries responsive min-width max-width">
+                                <span class="num">2.6</span> Media queries
+                            </button>
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-7" type="button" role="tab" data-claves="pseudo elementos before after first-letter selection placeholder marker">
+                                <span class="num">2.7</span> Pseudo-elementos
+                            </button>
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-8" type="button" role="tab" data-claves="pseudo clases hover focus active nth-child checked not">
+                                <span class="num">2.8</span> Pseudo-clases
+                            </button>
+                            <button class="nav-link" data-bs-toggle="pill" data-bs-target="#p-9" type="button" role="tab" data-claves="z-index capas position modal toast">
+                                <span class="num">2.9</span> Z-index
+                            </button>
                         </div>
-                        <div class="card-footer bg-transparent border-0 pb-3"><a href="#tema1" class="btn boton btn-sm">Ver tema</a></div>
+                        <p id="sin-resultados" class="small d-none mt-2">No se encontró ningún tema.</p>
                     </div>
                 </div>
+            </aside>
 
-                <div class="col">
-                    <div class="card tarjeta-tema h-100">
-                        <img src="https://picsum.photos/seed/tema2/600/320" class="card-img-top" alt="Tema 2.2" loading="lazy">
-                        <div class="card-body">
-                            <span class="numero">2.2</span>
-                            <h5 class="card-title mt-2">Tipos de incorporación</h5>
-                            <p class="card-text">Las tres formas de agregar CSS: interno, externo y en línea.</p>
+
+            <!-- ===== CONTENIDO ===== -->
+            <main class="col-lg-9 col-xl-10 contenido">
+                <div class="tab-content">
+
+
+                    <!-- ========== INICIO ========== -->
+                    <div class="tab-pane fade show active" id="p-inicio" role="tabpanel" tabindex="0">
+
+                        <div id="carrusel" class="carousel slide carrusel mb-4" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carrusel" data-bs-slide-to="0" class="active" aria-label="Diapositiva 1"></button>
+                                <button type="button" data-bs-target="#carrusel" data-bs-slide-to="1" aria-label="Diapositiva 2"></button>
+                                <button type="button" data-bs-target="#carrusel" data-bs-slide-to="2" aria-label="Diapositiva 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://picsum.photos/seed/css-portada-1/1600/600" class="d-block w-100" alt="Portada 1">
+                                    <div class="carousel-caption">
+                                        <h1>Aprende CSS paso a paso</h1>
+                                        <p class="d-none d-md-block">Nueve temas explicados con ejemplos y componentes de Bootstrap.</p>
+                                        <a href="#p-1" data-ir="p-1" class="btn boton">Empezar por el 2.1</a>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://picsum.photos/seed/css-portada-2/1600/600" class="d-block w-100" alt="Portada 2">
+                                    <div class="carousel-caption">
+                                        <h2 class="h1">Diseño responsive</h2>
+                                        <p class="d-none d-md-block">Una sola página que se adapta a móvil, tablet y computador.</p>
+                                        <a href="#p-6" data-ir="p-6" class="btn boton">Ir a media queries</a>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://picsum.photos/seed/css-portada-3/1600/600" class="d-block w-100" alt="Portada 3">
+                                    <div class="carousel-caption">
+                                        <h2 class="h1">Ejemplos en vivo</h2>
+                                        <p class="d-none d-md-block">Prueba flexbox, capas y pseudo-clases directamente en la página.</p>
+                                        <a href="#p-5" data-ir="p-5" class="btn boton">Ir a flexbox</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carrusel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon"></span><span class="visually-hidden">Anterior</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carrusel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon"></span><span class="visually-hidden">Siguiente</span>
+                            </button>
                         </div>
-                        <div class="card-footer bg-transparent border-0 pb-3"><a href="#tema2" class="btn boton btn-sm">Ver tema</a></div>
-                    </div>
-                </div>
 
-                <div class="col">
-                    <div class="card tarjeta-tema h-100">
-                        <img src="https://picsum.photos/seed/tema3/600/320" class="card-img-top" alt="Tema 2.3" loading="lazy">
-                        <div class="card-body">
-                            <span class="numero">2.3</span>
-                            <h5 class="card-title mt-2">Indentación, herencia y comentarios</h5>
-                            <p class="card-text">Código ordenado y qué propiedades pasan de padres a hijos.</p>
+                        <h2 class="titulo-seccion">Cómo usar esta guía</h2>
+                        <div class="row g-3 mb-5">
+                            <div class="col-md-4">
+                                <div class="paso">
+                                    <i class="bi bi-list-ul"></i>
+                                    <h5>1. Elige un tema</h5>
+                                    <p class="mb-0">Usa el índice de la izquierda, el buscador o las tarjetas de abajo.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="paso">
+                                    <i class="bi bi-chevron-bar-expand"></i>
+                                    <h5>2. Abre las cajas</h5>
+                                    <p class="mb-0">Cada tema tiene cajas desplegables con la explicación y ejemplos.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="paso">
+                                    <i class="bi bi-hand-index-thumb"></i>
+                                    <h5>3. Prueba los ejemplos</h5>
+                                    <p class="mb-0">Hay demos en vivo: botones, capas, flexbox y más.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="card-footer bg-transparent border-0 pb-3"><a href="#tema3" class="btn boton btn-sm">Ver tema</a></div>
-                    </div>
-                </div>
 
-                <div class="col">
-                    <div class="card tarjeta-tema h-100">
-                        <img src="https://picsum.photos/seed/tema4/600/320" class="card-img-top" alt="Tema 2.4" loading="lazy">
-                        <div class="card-body">
-                            <span class="numero">2.4</span>
-                            <h5 class="card-title mt-2">Niveles de especificidad</h5>
-                            <p class="card-text">Qué regla gana cuando dos estilos se contradicen.</p>
+                        <h2 class="titulo-seccion">Índice de temas</h2>
+                        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+
+                            <div class="col">
+                                <div class="card tarjeta-tema h-100">
+                                    <img src="https://picsum.photos/seed/css-estructura/600/320" class="card-img-top" alt="Tema 2.1" loading="lazy">
+                                    <div class="card-body">
+                                        <span class="numero">2.1</span>
+                                        <h5 class="card-title mt-2">Estructura y sintaxis</h5>
+                                        <p class="card-text">Selector, propiedad y valor: cómo se escribe una regla.</p>
+                                        <span class="badge bg-componente">Accordion · Table</span>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 pb-3"><a href="#p-1" data-ir="p-1" class="btn boton btn-sm stretched-link">Ver tema <i class="bi bi-arrow-right"></i></a></div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card tarjeta-tema h-100">
+                                    <img src="https://picsum.photos/seed/css-incorporacion/600/320" class="card-img-top" alt="Tema 2.2" loading="lazy">
+                                    <div class="card-body">
+                                        <span class="numero">2.2</span>
+                                        <h5 class="card-title mt-2">Tipos de incorporación</h5>
+                                        <p class="card-text">Las tres formas de agregar CSS: interno, externo y en línea.</p>
+                                        <span class="badge bg-componente">Tabs · Table</span>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 pb-3"><a href="#p-2" data-ir="p-2" class="btn boton btn-sm stretched-link">Ver tema <i class="bi bi-arrow-right"></i></a></div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card tarjeta-tema h-100">
+                                    <img src="https://picsum.photos/seed/css-herencia/600/320" class="card-img-top" alt="Tema 2.3" loading="lazy">
+                                    <div class="card-body">
+                                        <span class="numero">2.3</span>
+                                        <h5 class="card-title mt-2">Indentación, herencia y comentarios</h5>
+                                        <p class="card-text">Código ordenado y propiedades que pasan de padres a hijos.</p>
+                                        <span class="badge bg-componente">Accordion · List group</span>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 pb-3"><a href="#p-3" data-ir="p-3" class="btn boton btn-sm stretched-link">Ver tema <i class="bi bi-arrow-right"></i></a></div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card tarjeta-tema h-100">
+                                    <img src="https://picsum.photos/seed/css-especificidad/600/320" class="card-img-top" alt="Tema 2.4" loading="lazy">
+                                    <div class="card-body">
+                                        <span class="numero">2.4</span>
+                                        <h5 class="card-title mt-2">Niveles de especificidad</h5>
+                                        <p class="card-text">Qué regla gana cuando dos estilos se contradicen.</p>
+                                        <span class="badge bg-componente">Table · Progress</span>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 pb-3"><a href="#p-4" data-ir="p-4" class="btn boton btn-sm stretched-link">Ver tema <i class="bi bi-arrow-right"></i></a></div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card tarjeta-tema h-100">
+                                    <img src="https://picsum.photos/seed/css-flexbox/600/320" class="card-img-top" alt="Tema 2.5" loading="lazy">
+                                    <div class="card-body">
+                                        <span class="numero">2.5</span>
+                                        <h5 class="card-title mt-2">Flexbox, Grid y Breakpoints</h5>
+                                        <p class="card-text">Maquetación moderna y puntos de quiebre.</p>
+                                        <span class="badge bg-componente">Grid · Forms</span>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 pb-3"><a href="#p-5" data-ir="p-5" class="btn boton btn-sm stretched-link">Ver tema <i class="bi bi-arrow-right"></i></a></div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card tarjeta-tema h-100">
+                                    <img src="https://picsum.photos/seed/css-media/600/320" class="card-img-top" alt="Tema 2.6" loading="lazy">
+                                    <div class="card-body">
+                                        <span class="numero">2.6</span>
+                                        <h5 class="card-title mt-2">Media queries</h5>
+                                        <p class="card-text">Estilos que cambian según el tamaño de la pantalla.</p>
+                                        <span class="badge bg-componente">Alert · Badge</span>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 pb-3"><a href="#p-6" data-ir="p-6" class="btn boton btn-sm stretched-link">Ver tema <i class="bi bi-arrow-right"></i></a></div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card tarjeta-tema h-100">
+                                    <img src="https://picsum.photos/seed/css-pseudoelementos/600/320" class="card-img-top" alt="Tema 2.7" loading="lazy">
+                                    <div class="card-body">
+                                        <span class="numero">2.7</span>
+                                        <h5 class="card-title mt-2">Pseudo-elementos</h5>
+                                        <p class="card-text">::before, ::after, ::first-letter y más.</p>
+                                        <span class="badge bg-componente">Accordion · Form control</span>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 pb-3"><a href="#p-7" data-ir="p-7" class="btn boton btn-sm stretched-link">Ver tema <i class="bi bi-arrow-right"></i></a></div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card tarjeta-tema h-100">
+                                    <img src="https://picsum.photos/seed/css-pseudoclases/600/320" class="card-img-top" alt="Tema 2.8" loading="lazy">
+                                    <div class="card-body">
+                                        <span class="numero">2.8</span>
+                                        <h5 class="card-title mt-2">Pseudo-clases</h5>
+                                        <p class="card-text">:hover, :focus, :nth-child y otros estados.</p>
+                                        <span class="badge bg-componente">Button · Form switch</span>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 pb-3"><a href="#p-8" data-ir="p-8" class="btn boton btn-sm stretched-link">Ver tema <i class="bi bi-arrow-right"></i></a></div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="card tarjeta-tema h-100">
+                                    <img src="https://picsum.photos/seed/css-zindex/600/320" class="card-img-top" alt="Tema 2.9" loading="lazy">
+                                    <div class="card-body">
+                                        <span class="numero">2.9</span>
+                                        <h5 class="card-title mt-2">Z-index</h5>
+                                        <p class="card-text">Cómo se ordenan las capas una encima de otra.</p>
+                                        <span class="badge bg-componente">Modal · Toast</span>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0 pb-3"><a href="#p-9" data-ir="p-9" class="btn boton btn-sm stretched-link">Ver tema <i class="bi bi-arrow-right"></i></a></div>
+                                </div>
+                            </div>
+
                         </div>
-                        <div class="card-footer bg-transparent border-0 pb-3"><a href="#tema4" class="btn boton btn-sm">Ver tema</a></div>
                     </div>
-                </div>
 
-                <div class="col">
-                    <div class="card tarjeta-tema h-100">
-                        <img src="https://picsum.photos/seed/tema5/600/320" class="card-img-top" alt="Tema 2.5" loading="lazy">
-                        <div class="card-body">
-                            <span class="numero">2.5</span>
-                            <h5 class="card-title mt-2">Flexbox, Grid y Breakpoints</h5>
-                            <p class="card-text">Maquetación moderna y puntos de quiebre.</p>
+
+                    <!-- ========== 2.1 ESTRUCTURA Y SINTAXIS ========== -->
+                    <div class="tab-pane fade" id="p-1" role="tabpanel" tabindex="0">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#p-inicio" data-ir="p-inicio">Inicio</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">2.1 Estructura y sintaxis</li>
+                            </ol>
+                        </nav>
+
+                        <div class="banner">
+                            <img src="https://picsum.photos/seed/css-estructura/1400/420" alt="Imagen del tema 2.1" loading="lazy">
+                            <div class="banner-texto">
+                                <span class="numero">2.1</span>
+                                <h2>Estructura y sintaxis</h2>
+                                <p class="d-none d-md-block mb-0">CSS le da color, forma y orden a una página HTML. Todo se escribe con reglas.</p>
+                            </div>
                         </div>
-                        <div class="card-footer bg-transparent border-0 pb-3"><a href="#tema5" class="btn boton btn-sm">Ver tema</a></div>
-                    </div>
-                </div>
 
-                <div class="col">
-                    <div class="card tarjeta-tema h-100">
-                        <img src="https://picsum.photos/seed/tema6/600/320" class="card-img-top" alt="Tema 2.6" loading="lazy">
-                        <div class="card-body">
-                            <span class="numero">2.6</span>
-                            <h5 class="card-title mt-2">Media queries</h5>
-                            <p class="card-text">Estilos que cambian según el tamaño de la pantalla.</p>
+                        <div class="barra-herramientas">
+                            <span class="badge bg-componente">Bootstrap: Accordion · Table</span>
+                            <div class="ms-auto d-flex gap-2">
+                                <button class="btn btn-sm boton" data-abrir="acc1"><i class="bi bi-arrows-expand"></i> Abrir todo</button>
+                                <button class="btn btn-sm boton" data-cerrar="acc1"><i class="bi bi-arrows-collapse"></i> Cerrar todo</button>
+                            </div>
                         </div>
-                        <div class="card-footer bg-transparent border-0 pb-3"><a href="#tema6" class="btn boton btn-sm">Ver tema</a></div>
-                    </div>
-                </div>
 
-                <div class="col">
-                    <div class="card tarjeta-tema h-100">
-                        <img src="https://picsum.photos/seed/tema7/600/320" class="card-img-top" alt="Tema 2.7" loading="lazy">
-                        <div class="card-body">
-                            <span class="numero">2.7</span>
-                            <h5 class="card-title mt-2">Pseudo-elementos</h5>
-                            <p class="card-text">::before, ::after, ::first-letter y más.</p>
-                        </div>
-                        <div class="card-footer bg-transparent border-0 pb-3"><a href="#tema7" class="btn boton btn-sm">Ver tema</a></div>
-                    </div>
-                </div>
+                        <div class="row g-4">
+                            <div class="col-xl-7">
+                                <div class="accordion" id="acc1">
 
-                <div class="col">
-                    <div class="card tarjeta-tema h-100">
-                        <img src="https://picsum.photos/seed/tema8/600/320" class="card-img-top" alt="Tema 2.8" loading="lazy">
-                        <div class="card-body">
-                            <span class="numero">2.8</span>
-                            <h5 class="card-title mt-2">Pseudo-clases</h5>
-                            <p class="card-text">:hover, :focus, :nth-child y otros estados.</p>
-                        </div>
-                        <div class="card-footer bg-transparent border-0 pb-3"><a href="#tema8" class="btn boton btn-sm">Ver tema</a></div>
-                    </div>
-                </div>
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c1-1">¿Qué es una regla CSS?</button>
+                                        </h3>
+                                        <div id="c1-1" class="accordion-collapse collapse show">
+                                            <div class="accordion-body">
+                                                Una regla le dice al navegador <b>qué elemento</b> modificar y <b>cómo</b> hacerlo. Tiene dos partes:
+                                                <ul class="mt-2 mb-0">
+                                                    <li>El <b>selector</b>, que indica a qué elementos se aplica.</li>
+                                                    <li>El <b>bloque de declaraciones</b>, entre llaves <code>{ }</code>, con una o varias propiedades.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                <div class="col">
-                    <div class="card tarjeta-tema h-100">
-                        <img src="https://picsum.photos/seed/tema9/600/320" class="card-img-top" alt="Tema 2.9" loading="lazy">
-                        <div class="card-body">
-                            <span class="numero">2.9</span>
-                            <h5 class="card-title mt-2">Z-index</h5>
-                            <p class="card-text">Cómo se ordenan las capas una encima de otra.</p>
-                        </div>
-                        <div class="card-footer bg-transparent border-0 pb-3"><a href="#tema9" class="btn boton btn-sm">Ver tema</a></div>
-                    </div>
-                </div>
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c1-2">Selector</button>
+                                        </h3>
+                                        <div id="c1-2" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                Es lo que está antes de las llaves. Puede ser una etiqueta (<code>p</code>), una clase (<code>.tarjeta</code>) o un id (<code>#menu</code>).
+<pre class="codigo-mini"><code>p      { color: gray; }     /* etiqueta */
+.nota  { color: pink; }     /* clase */
+#menu  { color: purple; }   /* id */</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
 
-            </div>
-        </div>
-    </section>
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c1-3">Propiedad y valor</button>
+                                        </h3>
+                                        <div id="c1-3" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                La <b>propiedad</b> es lo que quieres cambiar (<code>color</code>, <code>margin</code>) y el <b>valor</b> es cómo debe quedar. Van separados por dos puntos y cada declaración termina con punto y coma.
+<pre class="codigo-mini"><code>propiedad: valor;
+background-color: #F8C8DC;</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c1-4">Tipos de selectores</button>
+                                        </h3>
+                                        <div id="c1-4" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-sm tabla align-middle mb-0">
+                                                        <thead><tr><th>Tipo</th><th>Ejemplo</th><th>Qué selecciona</th></tr></thead>
+                                                        <tbody>
+                                                            <tr><td>Universal</td><td><code>*</code></td><td>Todos los elementos</td></tr>
+                                                            <tr><td>Etiqueta</td><td><code>p</code></td><td>Todos los párrafos</td></tr>
+                                                            <tr><td>Clase</td><td><code>.card</code></td><td>Elementos con class="card"</td></tr>
+                                                            <tr><td>ID</td><td><code>#menu</code></td><td>El elemento con id="menu"</td></tr>
+                                                            <tr><td>Atributo</td><td><code>[type="text"]</code></td><td>Elementos con ese atributo</td></tr>
+                                                            <tr><td>Descendiente</td><td><code>div p</code></td><td>Los p dentro de un div</td></tr>
+                                                            <tr><td>Hijo directo</td><td><code>div &gt; p</code></td><td>Los p hijos directos del div</td></tr>
+                                                            <tr><td>Agrupación</td><td><code>h1, h2</code></td><td>Ambos a la vez</td></tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-    <!-- ===== 2.1 ESTRUCTURA Y SINTAXIS ===== -->
-    <section class="tema fondo-a" id="tema1">
-        <div class="container">
-            <span class="numero">2.1</span>
-            <h2 class="mt-2">Estructura y sintaxis</h2>
-            <p class="lead">CSS (<i>Cascading Style Sheets</i>) es el lenguaje que le da color, forma y orden a una página HTML. Todo se escribe con reglas.</p>
-            <p><span class="badge bg-componente">Bootstrap: Accordion · Table</span></p>
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c1-5">Unidades y colores</button>
+                                        </h3>
+                                        <div id="c1-5" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                <b>Unidades:</b> <code>px</code> (fija), <code>%</code> (relativa al padre), <code>rem</code> (relativa al tamaño base), <code>vw</code> y <code>vh</code> (ancho y alto de la ventana).<br>
+                                                <b>Colores:</b> nombre (<code>pink</code>), hexadecimal (<code>#E58FB1</code>), <code>rgb(229, 143, 177)</code> y <code>hsl(335, 63%, 71%)</code>.
+                                            </div>
+                                        </div>
+                                    </div>
 
-            <div class="row g-4">
-                <div class="col-lg-5">
-                    <img class="img-tema" src="https://picsum.photos/seed/estructura/800/500" alt="Imagen ilustrativa del tema 2.1" loading="lazy">
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c1-6">Errores comunes</button>
+                                        </h3>
+                                        <div id="c1-6" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                <ul class="mb-0">
+                                                    <li>Olvidar el punto y coma al final de la declaración.</li>
+                                                    <li>No cerrar la llave <code>}</code>: rompe todas las reglas que siguen.</li>
+                                                    <li>Escribir mal la propiedad (<code>colour</code> en vez de <code>color</code>).</li>
+                                                    <li>Poner mal el <code>.</code> o el <code>#</code> en el selector.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                    <div class="ventana-codigo mt-3">
-                        <div class="barra"><span></span><span></span><span></span><b>estilos.css</b></div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-5">
+                                <img class="img-lado" src="https://picsum.photos/seed/css-sintaxis-lado/800/500" alt="Imagen lateral del tema 2.1" loading="lazy">
+
+                                <div class="ventana-codigo mt-3">
+                                    <div class="barra"><span></span><span></span><span></span><b>estilos.css</b></div>
 <pre><code>/* selector */
 h1 {
   color: #E58FB1;     /* propiedad: valor; */
   font-size: 2rem;
 }</code></pre>
+                                </div>
+
+                                <div class="demo mt-3">
+                                    <p class="demo-titulo">Resultado</p>
+                                    <h5 class="ejemplo-sintaxis">Título con estilo</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between mt-4">
+                            <button class="btn boton" data-ir="p-inicio"><i class="bi bi-arrow-left"></i> Índice</button>
+                            <button class="btn boton" data-ir="p-2">2.2 Tipos de incorporación <i class="bi bi-arrow-right"></i></button>
+                        </div>
                     </div>
 
-                    <div class="demo">
-                        <p class="demo-titulo">Resultado</p>
-                        <h5 class="ejemplo-sintaxis">Título con estilo</h5>
-                    </div>
-                </div>
 
-                <div class="col-lg-7">
-                    <div class="accordion" id="acc1">
+                    <!-- ========== 2.2 TIPOS DE INCORPORACIÓN ========== -->
+                    <div class="tab-pane fade" id="p-2" role="tabpanel" tabindex="0">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#p-inicio" data-ir="p-inicio">Inicio</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">2.2 Tipos de incorporación</li>
+                            </ol>
+                        </nav>
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c1-1">¿Qué es una regla CSS?</button>
-                            </h3>
-                            <div id="c1-1" class="accordion-collapse collapse show" data-bs-parent="#acc1">
-                                <div class="accordion-body">
-                                    Una regla le dice al navegador <b>qué elemento</b> modificar y <b>cómo</b> hacerlo. Tiene dos partes:
-                                    <ul class="mt-2 mb-0">
-                                        <li>El <b>selector</b>, que indica a qué elementos se aplica.</li>
-                                        <li>El <b>bloque de declaraciones</b>, entre llaves <code>{ }</code>, con una o varias propiedades.</li>
-                                    </ul>
-                                </div>
+                        <div class="banner">
+                            <img src="https://picsum.photos/seed/css-incorporacion/1400/420" alt="Imagen del tema 2.2" loading="lazy">
+                            <div class="banner-texto">
+                                <span class="numero">2.2</span>
+                                <h2>Tipos de incorporación de CSS</h2>
+                                <p class="d-none d-md-block mb-0">Hay tres formas de conectar CSS con HTML: interno, externo y en línea.</p>
                             </div>
                         </div>
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c1-2">Selector</button>
-                            </h3>
-                            <div id="c1-2" class="accordion-collapse collapse" data-bs-parent="#acc1">
-                                <div class="accordion-body">
-                                    Es lo que está antes de las llaves. Puede ser una etiqueta (<code>p</code>), una clase (<code>.tarjeta</code>) o un id (<code>#menu</code>).
-<pre class="codigo-mini"><code>p      { color: gray; }     /* etiqueta */
-.nota  { color: pink; }     /* clase */
-#menu  { color: purple; }   /* id */</code></pre>
-                                </div>
+                        <div class="barra-herramientas">
+                            <span class="badge bg-componente">Bootstrap: Tabs · Table · Accordion</span>
+                            <div class="ms-auto d-flex gap-2">
+                                <button class="btn btn-sm boton" data-abrir="acc2"><i class="bi bi-arrows-expand"></i> Abrir todo</button>
+                                <button class="btn btn-sm boton" data-cerrar="acc2"><i class="bi bi-arrows-collapse"></i> Cerrar todo</button>
                             </div>
                         </div>
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c1-3">Propiedad y valor</button>
-                            </h3>
-                            <div id="c1-3" class="accordion-collapse collapse" data-bs-parent="#acc1">
-                                <div class="accordion-body">
-                                    La <b>propiedad</b> es la característica que quieres cambiar (<code>color</code>, <code>margin</code>) y el <b>valor</b> es cómo debe quedar. Van separados por dos puntos y cada declaración termina con punto y coma.
-<pre class="codigo-mini"><code>propiedad: valor;
-background-color: #F8C8DC;</code></pre>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c1-4">Tipos de selectores</button>
-                            </h3>
-                            <div id="c1-4" class="accordion-collapse collapse" data-bs-parent="#acc1">
-                                <div class="accordion-body">
-                                    <div class="table-responsive">
-                                        <table class="table table-sm tabla align-middle mb-0">
-                                            <thead><tr><th>Tipo</th><th>Ejemplo</th><th>Qué selecciona</th></tr></thead>
-                                            <tbody>
-                                                <tr><td>Universal</td><td><code>*</code></td><td>Todos los elementos</td></tr>
-                                                <tr><td>Etiqueta</td><td><code>p</code></td><td>Todos los párrafos</td></tr>
-                                                <tr><td>Clase</td><td><code>.card</code></td><td>Elementos con class="card"</td></tr>
-                                                <tr><td>ID</td><td><code>#menu</code></td><td>El elemento con id="menu"</td></tr>
-                                                <tr><td>Atributo</td><td><code>[type="text"]</code></td><td>Elementos con ese atributo</td></tr>
-                                                <tr><td>Descendiente</td><td><code>div p</code></td><td>Los p dentro de un div</td></tr>
-                                                <tr><td>Hijo directo</td><td><code>div &gt; p</code></td><td>Los p hijos directos del div</td></tr>
-                                                <tr><td>Agrupación</td><td><code>h1, h2</code></td><td>Ambos a la vez</td></tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c1-5">Unidades y colores</button>
-                            </h3>
-                            <div id="c1-5" class="accordion-collapse collapse" data-bs-parent="#acc1">
-                                <div class="accordion-body">
-                                    <b>Unidades:</b> <code>px</code> (fija), <code>%</code> (relativa al padre), <code>rem</code> (relativa al tamaño base), <code>vw</code> y <code>vh</code> (ancho y alto de la ventana).<br>
-                                    <b>Colores:</b> nombre (<code>pink</code>), hexadecimal (<code>#E58FB1</code>), <code>rgb(229, 143, 177)</code> y <code>hsl(335, 63%, 71%)</code>.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c1-6">Errores comunes</button>
-                            </h3>
-                            <div id="c1-6" class="accordion-collapse collapse" data-bs-parent="#acc1">
-                                <div class="accordion-body">
-                                    <ul class="mb-0">
-                                        <li>Olvidar el punto y coma al final de la declaración.</li>
-                                        <li>No cerrar la llave <code>}</code>: rompe todas las reglas que siguen.</li>
-                                        <li>Escribir mal la propiedad (<code>colour</code> en vez de <code>color</code>).</li>
-                                        <li>Usar <code>.</code> o <code>#</code> de más o de menos en el selector.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ===== 2.2 TIPOS DE INCORPORACIÓN ===== -->
-    <section class="tema fondo-b" id="tema2">
-        <div class="container">
-            <span class="numero">2.2</span>
-            <h2 class="mt-2">Tipos de incorporación de CSS</h2>
-            <p class="lead">Hay tres formas de conectar CSS con HTML: interno, externo y en línea.</p>
-            <p><span class="badge bg-componente">Bootstrap: Tabs · Table · Accordion</span></p>
-
-            <div class="row g-4">
-                <div class="col-lg-5">
-                    <img class="img-tema" src="https://picsum.photos/seed/incorporacion/800/500" alt="Imagen ilustrativa del tema 2.2" loading="lazy">
-                </div>
-
-                <div class="col-lg-7">
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#interno" type="button">Interno</button></li>
-                        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#externo" type="button">Externo</button></li>
-                        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#linea" type="button">En línea</button></li>
-                    </ul>
-                    <div class="tab-content pt-3">
-                        <div class="tab-pane fade show active" id="interno">
-                            <p>Se escribe dentro de la etiqueta <code>&lt;style&gt;</code>, en el <code>&lt;head&gt;</code> del mismo archivo HTML.</p>
-                            <div class="ventana-codigo">
-                                <div class="barra"><span></span><span></span><span></span><b>index.html</b></div>
+                        <div class="row g-4">
+                            <div class="col-xl-7">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#interno" type="button">Interno</button></li>
+                                    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#externo" type="button">Externo</button></li>
+                                    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#linea" type="button">En línea</button></li>
+                                </ul>
+                                <div class="tab-content pt-3">
+                                    <div class="tab-pane fade show active" id="interno">
+                                        <p>Se escribe dentro de la etiqueta <code>&lt;style&gt;</code>, en el <code>&lt;head&gt;</code> del mismo archivo HTML.</p>
+                                        <div class="ventana-codigo">
+                                            <div class="barra"><span></span><span></span><span></span><b>index.html</b></div>
 <pre><code>&lt;head&gt;
   &lt;style&gt;
     p { color: #E58FB1; }
   &lt;/style&gt;
 &lt;/head&gt;</code></pre>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="externo">
-                            <p>Se escribe en un archivo <code>.css</code> aparte y se conecta con <code>&lt;link&gt;</code>. Es la forma más usada en proyectos reales.</p>
-                            <div class="ventana-codigo">
-                                <div class="barra"><span></span><span></span><span></span><b>index.html</b></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="externo">
+                                        <p>Se escribe en un archivo <code>.css</code> aparte y se conecta con <code>&lt;link&gt;</code>. Es la forma más usada en proyectos reales.</p>
+                                        <div class="ventana-codigo">
+                                            <div class="barra"><span></span><span></span><span></span><b>index.html</b></div>
 <pre><code>&lt;head&gt;
-  &lt;link rel="stylesheet" href="css/estilos.css"&gt;
+  &lt;link rel="stylesheet" href="estilos.css"&gt;
 &lt;/head&gt;</code></pre>
-                            </div>
-                            <div class="ventana-codigo mt-2">
-                                <div class="barra"><span></span><span></span><span></span><b>css/estilos.css</b></div>
+                                        </div>
+                                        <div class="ventana-codigo mt-2">
+                                            <div class="barra"><span></span><span></span><span></span><b>estilos.css</b></div>
 <pre><code>p { color: #E58FB1; }</code></pre>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="linea">
-                            <p>Se escribe directamente en la etiqueta con el atributo <code>style</code>. Solo afecta a ese elemento.</p>
-                            <div class="ventana-codigo">
-                                <div class="barra"><span></span><span></span><span></span><b>index.html</b></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="linea">
+                                        <p>Se escribe directamente en la etiqueta con el atributo <code>style</code>. Solo afecta a ese elemento.</p>
+                                        <div class="ventana-codigo">
+                                            <div class="barra"><span></span><span></span><span></span><b>index.html</b></div>
 <pre><code>&lt;p style="color: #E58FB1; font-size: 18px;"&gt;
   Texto con estilo en línea
 &lt;/p&gt;</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="table-responsive mt-4">
+                                    <table class="table tabla align-middle">
+                                        <thead><tr><th>Tipo</th><th>Dónde se escribe</th><th>Ventajas</th><th>Desventajas</th></tr></thead>
+                                        <tbody>
+                                            <tr><td><b>Interno</b></td><td>Etiqueta <code>&lt;style&gt;</code></td><td>Rápido para una sola página</td><td>No se reutiliza en otras páginas</td></tr>
+                                            <tr><td><b>Externo</b></td><td>Archivo <code>.css</code> con <code>&lt;link&gt;</code></td><td>Un solo archivo para todo el sitio</td><td>Una petición extra al cargar</td></tr>
+                                            <tr><td><b>En línea</b></td><td>Atributo <code>style</code></td><td>Sirve para un cambio puntual</td><td>Difícil de mantener y muy fuerte en especificidad</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="accordion mt-3" id="acc2">
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c2-1">¿Cuál debo usar?</button>
+                                        </h3>
+                                        <div id="c2-1" class="accordion-collapse collapse show">
+                                            <div class="accordion-body">Casi siempre el <b>externo</b>: mantiene el HTML limpio y permite usar el mismo CSS en todas las páginas. El interno sirve para pruebas rápidas y el en línea solo para casos muy puntuales.</div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2-2">¿Qué pasa si uso los tres a la vez?</button>
+                                        </h3>
+                                        <div id="c2-2" class="accordion-collapse collapse">
+                                            <div class="accordion-body">El estilo <b>en línea</b> gana sobre los otros dos. Entre el interno y el externo, gana el que esté escrito después en el código (si tienen la misma especificidad).</div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2-3">Buenas prácticas</button>
+                                        </h3>
+                                        <div id="c2-3" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                <ul class="mb-0">
+                                                    <li>Pon el <code>&lt;link&gt;</code> dentro del <code>&lt;head&gt;</code>.</li>
+                                                    <li>Guarda los archivos CSS en una carpeta o en la raíz del proyecto, bien nombrados.</li>
+                                                    <li>Evita el estilo en línea, salvo que sea necesario.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-5">
+                                <img class="img-lado" src="https://picsum.photos/seed/css-incorporacion-lado/800/500" alt="Imagen lateral del tema 2.2" loading="lazy">
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="table-responsive mt-4">
-                <table class="table tabla align-middle">
-                    <thead><tr><th>Tipo</th><th>Dónde se escribe</th><th>Ventajas</th><th>Desventajas</th></tr></thead>
-                    <tbody>
-                        <tr><td><b>Interno</b></td><td>Etiqueta <code>&lt;style&gt;</code></td><td>Rápido para una sola página</td><td>No se reutiliza en otras páginas</td></tr>
-                        <tr><td><b>Externo</b></td><td>Archivo <code>.css</code> con <code>&lt;link&gt;</code></td><td>Un solo archivo para todo el sitio, más ordenado</td><td>Una petición extra al cargar</td></tr>
-                        <tr><td><b>En línea</b></td><td>Atributo <code>style</code></td><td>Sirve para un cambio puntual</td><td>Difícil de mantener y muy fuerte en especificidad</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="accordion mt-3" id="acc2">
-                <div class="accordion-item">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c2-1">¿Cuál debo usar?</button>
-                    </h3>
-                    <div id="c2-1" class="accordion-collapse collapse show" data-bs-parent="#acc2">
-                        <div class="accordion-body">Casi siempre el <b>externo</b>: mantiene el HTML limpio y permite usar el mismo CSS en todas las páginas. El interno sirve para pruebas rápidas y el en línea solo para casos muy puntuales.</div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2-2">¿Qué pasa si uso los tres a la vez?</button>
-                    </h3>
-                    <div id="c2-2" class="accordion-collapse collapse" data-bs-parent="#acc2">
-                        <div class="accordion-body">El estilo <b>en línea</b> gana sobre los otros dos. Entre el interno y el externo, gana el que esté escrito después en el código (si tienen la misma especificidad).</div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h3 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2-3">Buenas prácticas</button>
-                    </h3>
-                    <div id="c2-3" class="accordion-collapse collapse" data-bs-parent="#acc2">
-                        <div class="accordion-body">
-                            <ul class="mb-0">
-                                <li>Pon el <code>&lt;link&gt;</code> dentro del <code>&lt;head&gt;</code>.</li>
-                                <li>Guarda los archivos CSS en una carpeta <code>css/</code>.</li>
-                                <li>Evita el estilo en línea, salvo que sea necesario.</li>
-                            </ul>
+                        <div class="d-flex justify-content-between mt-4">
+                            <button class="btn boton" data-ir="p-1"><i class="bi bi-arrow-left"></i> 2.1 Estructura y sintaxis</button>
+                            <button class="btn boton" data-ir="p-3">2.3 Indentación y herencia <i class="bi bi-arrow-right"></i></button>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
-    <!-- ===== 2.3 INDENTACIÓN, HERENCIA Y COMENTARIOS ===== -->
-    <section class="tema fondo-a" id="tema3">
-        <div class="container">
-            <span class="numero">2.3</span>
-            <h2 class="mt-2">Indentación, herencia y comentarios</h2>
-            <p class="lead">Escribir el código ordenado, entender qué se hereda y documentar lo que haces.</p>
-            <p><span class="badge bg-componente">Bootstrap: Accordion · List group</span></p>
+                    <!-- ========== 2.3 INDENTACIÓN, HERENCIA Y COMENTARIOS ========== -->
+                    <div class="tab-pane fade" id="p-3" role="tabpanel" tabindex="0">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#p-inicio" data-ir="p-inicio">Inicio</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">2.3 Indentación, herencia y comentarios</li>
+                            </ol>
+                        </nav>
 
-            <div class="row g-4">
-                <div class="col-lg-5 order-lg-2">
-                    <img class="img-tema" src="https://picsum.photos/seed/herencia/800/500" alt="Imagen ilustrativa del tema 2.3" loading="lazy">
-
-                    <div class="demo mt-3">
-                        <p class="demo-titulo">Herencia en vivo</p>
-                        <div class="padre">
-                            <b>Padre</b> (tiene color, fuente y borde)
-                            <div class="hijo mt-2">Hijo: hereda el color y la fuente, pero no el borde.</div>
+                        <div class="banner">
+                            <img src="https://picsum.photos/seed/css-herencia/1400/420" alt="Imagen del tema 2.3" loading="lazy">
+                            <div class="banner-texto">
+                                <span class="numero">2.3</span>
+                                <h2>Indentación, herencia y comentarios</h2>
+                                <p class="d-none d-md-block mb-0">Escribir el código ordenado, entender qué se hereda y documentar lo que haces.</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-7">
-                    <div class="accordion" id="acc3">
+                        <div class="barra-herramientas">
+                            <span class="badge bg-componente">Bootstrap: Accordion · List group</span>
+                            <div class="ms-auto d-flex gap-2">
+                                <button class="btn btn-sm boton" data-abrir="acc3"><i class="bi bi-arrows-expand"></i> Abrir todo</button>
+                                <button class="btn btn-sm boton" data-cerrar="acc3"><i class="bi bi-arrows-collapse"></i> Cerrar todo</button>
+                            </div>
+                        </div>
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c3-1">Indentación</button>
-                            </h3>
-                            <div id="c3-1" class="accordion-collapse collapse show" data-bs-parent="#acc3">
-                                <div class="accordion-body">
-                                    Es el espacio al inicio de cada línea. No cambia cómo funciona el CSS, pero hace que el código se lea mucho mejor. Lo normal es usar 2 o 4 espacios dentro de cada llave.
-                                    <div class="row g-2 mt-1">
-                                        <div class="col-md-6">
-                                            <p class="mb-1 small"><b><i class="bi bi-x-circle"></i> Mal</b></p>
+                        <div class="row g-4">
+                            <div class="col-xl-7">
+                                <div class="accordion" id="acc3">
+
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c3-1">Indentación</button>
+                                        </h3>
+                                        <div id="c3-1" class="accordion-collapse collapse show">
+                                            <div class="accordion-body">
+                                                Es el espacio al inicio de cada línea. No cambia cómo funciona el CSS, pero hace que el código se lea mucho mejor. Lo normal es usar 2 o 4 espacios dentro de cada llave.
+                                                <div class="row g-2 mt-1">
+                                                    <div class="col-md-6">
+                                                        <p class="mb-1 small"><b><i class="bi bi-x-circle"></i> Mal</b></p>
 <pre class="codigo-mini"><code>p{color:red;
 margin:0;
 font-size:16px;}</code></pre>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p class="mb-1 small"><b><i class="bi bi-check-circle"></i> Bien</b></p>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <p class="mb-1 small"><b><i class="bi bi-check-circle"></i> Bien</b></p>
 <pre class="codigo-mini"><code>p {
   color: red;
   margin: 0;
   font-size: 16px;
 }</code></pre>
+                                                    </div>
+                                                </div>
+                                                <p class="mb-0 mt-2 small">En VS Code puedes ordenar todo con <b>Shift + Alt + F</b>.</p>
+                                            </div>
                                         </div>
                                     </div>
-                                    <p class="mb-0 mt-2 small">En VS Code puedes ordenar todo con <b>Shift + Alt + F</b>.</p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3-2">Herencia</button>
-                            </h3>
-                            <div id="c3-2" class="accordion-collapse collapse" data-bs-parent="#acc3">
-                                <div class="accordion-body">
-                                    Algunas propiedades pasan automáticamente del elemento padre a sus hijos. Así no tienes que repetir el color o la fuente en cada etiqueta.
-                                    <div class="row g-2 mt-1">
-                                        <div class="col-md-6">
-                                            <p class="mb-1"><b>Sí se heredan</b></p>
-                                            <ul class="list-group list-group-flush">
-                                                <li class="list-group-item"><code>color</code></li>
-                                                <li class="list-group-item"><code>font-family</code></li>
-                                                <li class="list-group-item"><code>font-size</code></li>
-                                                <li class="list-group-item"><code>line-height</code></li>
-                                                <li class="list-group-item"><code>text-align</code></li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <p class="mb-1"><b>No se heredan</b></p>
-                                            <ul class="list-group list-group-flush">
-                                                <li class="list-group-item"><code>margin</code></li>
-                                                <li class="list-group-item"><code>padding</code></li>
-                                                <li class="list-group-item"><code>border</code></li>
-                                                <li class="list-group-item"><code>background</code></li>
-                                                <li class="list-group-item"><code>width</code> y <code>height</code></li>
-                                            </ul>
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3-2">Herencia</button>
+                                        </h3>
+                                        <div id="c3-2" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                Algunas propiedades pasan automáticamente del elemento padre a sus hijos. Así no tienes que repetir el color o la fuente en cada etiqueta.
+                                                <div class="row g-2 mt-1">
+                                                    <div class="col-md-6">
+                                                        <p class="mb-1"><b>Sí se heredan</b></p>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item"><code>color</code></li>
+                                                            <li class="list-group-item"><code>font-family</code></li>
+                                                            <li class="list-group-item"><code>font-size</code></li>
+                                                            <li class="list-group-item"><code>line-height</code></li>
+                                                            <li class="list-group-item"><code>text-align</code></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <p class="mb-1"><b>No se heredan</b></p>
+                                                        <ul class="list-group list-group-flush">
+                                                            <li class="list-group-item"><code>margin</code></li>
+                                                            <li class="list-group-item"><code>padding</code></li>
+                                                            <li class="list-group-item"><code>border</code></li>
+                                                            <li class="list-group-item"><code>background</code></li>
+                                                            <li class="list-group-item"><code>width</code> y <code>height</code></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3-3">Palabras clave: inherit, initial y unset</button>
-                            </h3>
-                            <div id="c3-3" class="accordion-collapse collapse" data-bs-parent="#acc3">
-                                <div class="accordion-body">
-                                    <ul class="mb-2">
-                                        <li><code>inherit</code>: obliga a tomar el valor del padre.</li>
-                                        <li><code>initial</code>: vuelve al valor por defecto de CSS.</li>
-                                        <li><code>unset</code>: hereda si la propiedad es heredable, y si no, usa el valor inicial.</li>
-                                    </ul>
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3-3">Palabras clave: inherit, initial y unset</button>
+                                        </h3>
+                                        <div id="c3-3" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                <ul class="mb-2">
+                                                    <li><code>inherit</code>: obliga a tomar el valor del padre.</li>
+                                                    <li><code>initial</code>: vuelve al valor por defecto de CSS.</li>
+                                                    <li><code>unset</code>: hereda si la propiedad es heredable, y si no, usa el valor inicial.</li>
+                                                </ul>
 <pre class="codigo-mini"><code>.caja { border: inherit; }</code></pre>
-                                </div>
-                            </div>
-                        </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3-4">Comentarios</button>
-                            </h3>
-                            <div id="c3-4" class="accordion-collapse collapse" data-bs-parent="#acc3">
-                                <div class="accordion-body">
-                                    El navegador ignora los comentarios. Sirven para explicar el código, separar secciones o desactivar una línea temporalmente. En CSS solo existe esta forma:
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3-4">Comentarios</button>
+                                        </h3>
+                                        <div id="c3-4" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                El navegador ignora los comentarios. Sirven para explicar el código, separar secciones o desactivar una línea temporalmente. En CSS solo existe esta forma:
 <pre class="codigo-mini"><code>/* Comentario de una línea */
 
 /* ===== Menú =====
@@ -586,360 +688,423 @@ p {
   color: red;
   /* margin: 0; (línea desactivada) */
 }</code></pre>
-                                    <p class="mb-0 small">Ojo: <code>//</code> no es un comentario válido en CSS. En VS Code se comenta con <b>Ctrl + ñ</b> o <b>Ctrl + /</b>.</p>
+                                                <p class="mb-0 small">Ojo: <code>//</code> no es un comentario válido en CSS. En VS Code se comenta con <b>Ctrl + /</b>.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-xl-5">
+                                <img class="img-lado" src="https://picsum.photos/seed/css-herencia-lado/800/500" alt="Imagen lateral del tema 2.3" loading="lazy">
+
+                                <div class="demo mt-3">
+                                    <p class="demo-titulo">Herencia en vivo</p>
+                                    <div class="padre">
+                                        <b>Padre</b> (tiene color, fuente y borde)
+                                        <div class="hijo mt-2">Hijo: hereda el color y la fuente, pero no el borde.</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ===== 2.4 ESPECIFICIDAD ===== -->
-    <section class="tema fondo-b" id="tema4">
-        <div class="container">
-            <span class="numero">2.4</span>
-            <h2 class="mt-2">Niveles de especificidad</h2>
-            <p class="lead">Cuando dos reglas se contradicen, el navegador aplica la que tenga más especificidad.</p>
-            <p><span class="badge bg-componente">Bootstrap: Table · Progress · Accordion</span></p>
-
-            <div class="row g-4">
-                <div class="col-lg-5">
-                    <img class="img-tema" src="https://picsum.photos/seed/especificidad/800/500" alt="Imagen ilustrativa del tema 2.4" loading="lazy">
-
-                    <div class="ventana-codigo mt-3">
-                        <div class="barra"><span></span><span></span><span></span><b>estilos.css</b></div>
-<pre><code>p      { color: gray; }   /* 1   */
-.azul  { color: blue; }   /* 10  */
-#rosa  { color: deeppink; } /* 100 */</code></pre>
+                        <div class="d-flex justify-content-between mt-4">
+                            <button class="btn boton" data-ir="p-2"><i class="bi bi-arrow-left"></i> 2.2 Tipos de incorporación</button>
+                            <button class="btn boton" data-ir="p-4">2.4 Especificidad <i class="bi bi-arrow-right"></i></button>
+                        </div>
                     </div>
 
-                    <div class="demo demo-especificidad">
-                        <p class="demo-titulo">Resultado</p>
-                        <p class="mb-1">Solo etiqueta: gana el gris.</p>
-                        <p class="azul mb-1">Etiqueta + clase: gana la clase.</p>
-                        <p class="azul rosa mb-0" id="rosa">Etiqueta + clase + ID: gana el ID.</p>
-                    </div>
-                </div>
 
-                <div class="col-lg-7">
-                    <div class="table-responsive">
-                        <table class="table tabla align-middle">
-                            <thead><tr><th>Selector</th><th>Ejemplo</th><th>Valor</th></tr></thead>
-                            <tbody>
-                                <tr><td>Estilo en línea</td><td><code>style="..."</code></td><td><b>1000</b></td></tr>
-                                <tr><td>ID</td><td><code>#menu</code></td><td><b>100</b></td></tr>
-                                <tr><td>Clase, atributo, pseudo-clase</td><td><code>.card</code>, <code>[type]</code>, <code>:hover</code></td><td><b>10</b></td></tr>
-                                <tr><td>Etiqueta, pseudo-elemento</td><td><code>p</code>, <code>::before</code></td><td><b>1</b></td></tr>
-                                <tr><td>Universal</td><td><code>*</code></td><td><b>0</b></td></tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <!-- ========== 2.4 ESPECIFICIDAD ========== -->
+                    <div class="tab-pane fade" id="p-4" role="tabpanel" tabindex="0">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#p-inicio" data-ir="p-inicio">Inicio</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">2.4 Niveles de especificidad</li>
+                            </ol>
+                        </nav>
 
-                    <p class="mb-1 small"><b>Fuerza de cada nivel (ilustrativo)</b></p>
-                    <div class="progress mb-2" style="height: 22px;"><div class="progress-bar" style="width: 100%;">En línea</div></div>
-                    <div class="progress mb-2" style="height: 22px;"><div class="progress-bar" style="width: 75%;">ID</div></div>
-                    <div class="progress mb-2" style="height: 22px;"><div class="progress-bar" style="width: 50%;">Clase</div></div>
-                    <div class="progress mb-3" style="height: 22px;"><div class="progress-bar" style="width: 25%;">Etiqueta</div></div>
+                        <div class="banner">
+                            <img src="https://picsum.photos/seed/css-especificidad/1400/420" alt="Imagen del tema 2.4" loading="lazy">
+                            <div class="banner-texto">
+                                <span class="numero">2.4</span>
+                                <h2>Niveles de especificidad</h2>
+                                <p class="d-none d-md-block mb-0">Cuando dos reglas se contradicen, el navegador aplica la que tenga más especificidad.</p>
+                            </div>
+                        </div>
 
-                    <div class="accordion" id="acc4">
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c4-1">¿Cómo se calcula?</button>
-                            </h3>
-                            <div id="c4-1" class="accordion-collapse collapse show" data-bs-parent="#acc4">
-                                <div class="accordion-body">
-                                    Se suman los valores de todas las partes del selector.
+                        <div class="barra-herramientas">
+                            <span class="badge bg-componente">Bootstrap: Table · Progress · Accordion</span>
+                            <div class="ms-auto d-flex gap-2">
+                                <button class="btn btn-sm boton" data-abrir="acc4"><i class="bi bi-arrows-expand"></i> Abrir todo</button>
+                                <button class="btn btn-sm boton" data-cerrar="acc4"><i class="bi bi-arrows-collapse"></i> Cerrar todo</button>
+                            </div>
+                        </div>
+
+                        <div class="row g-4">
+                            <div class="col-xl-7">
+                                <div class="table-responsive">
+                                    <table class="table tabla align-middle">
+                                        <thead><tr><th>Selector</th><th>Ejemplo</th><th>Valor</th></tr></thead>
+                                        <tbody>
+                                            <tr><td>Estilo en línea</td><td><code>style="..."</code></td><td><b>1000</b></td></tr>
+                                            <tr><td>ID</td><td><code>#menu</code></td><td><b>100</b></td></tr>
+                                            <tr><td>Clase, atributo, pseudo-clase</td><td><code>.card</code>, <code>[type]</code>, <code>:hover</code></td><td><b>10</b></td></tr>
+                                            <tr><td>Etiqueta, pseudo-elemento</td><td><code>p</code>, <code>::before</code></td><td><b>1</b></td></tr>
+                                            <tr><td>Universal</td><td><code>*</code></td><td><b>0</b></td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <p class="mb-1 small"><b>Fuerza de cada nivel (ilustrativo)</b></p>
+                                <div class="progress mb-2" style="height: 22px;"><div class="progress-bar" style="width: 100%;">En línea</div></div>
+                                <div class="progress mb-2" style="height: 22px;"><div class="progress-bar" style="width: 75%;">ID</div></div>
+                                <div class="progress mb-2" style="height: 22px;"><div class="progress-bar" style="width: 50%;">Clase</div></div>
+                                <div class="progress mb-3" style="height: 22px;"><div class="progress-bar" style="width: 25%;">Etiqueta</div></div>
+
+                                <div class="accordion" id="acc4">
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c4-1">¿Cómo se calcula?</button>
+                                        </h3>
+                                        <div id="c4-1" class="accordion-collapse collapse show">
+                                            <div class="accordion-body">
+                                                Se suman los valores de todas las partes del selector.
 <pre class="codigo-mini"><code>#menu .item a:hover
 = 100 (id) + 10 (clase) + 10 (pseudo-clase) + 1 (etiqueta)
 = 121
 
 nav ul li a
 = 1 + 1 + 1 + 1 = 4</code></pre>
-                                    Gana el selector con el número más alto.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c4-2">Si hay empate</button>
-                            </h3>
-                            <div id="c4-2" class="accordion-collapse collapse" data-bs-parent="#acc4">
-                                <div class="accordion-body">Si dos reglas tienen la misma especificidad, gana la que esté <b>más abajo</b> en el código. Por eso el orden de las reglas importa.</div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c4-3">!important</button>
-                            </h3>
-                            <div id="c4-3" class="accordion-collapse collapse" data-bs-parent="#acc4">
-                                <div class="accordion-body">
-                                    Pasa por encima de todo lo demás:
+                                                Gana el selector con el número más alto.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c4-2">Si hay empate</button>
+                                        </h3>
+                                        <div id="c4-2" class="accordion-collapse collapse">
+                                            <div class="accordion-body">Si dos reglas tienen la misma especificidad, gana la que esté <b>más abajo</b> en el código. Por eso el orden de las reglas importa.</div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c4-3">!important</button>
+                                        </h3>
+                                        <div id="c4-3" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                Pasa por encima de todo lo demás:
 <pre class="codigo-mini"><code>p { color: red !important; }</code></pre>
-                                    Úsalo lo menos posible, porque después es muy difícil corregir los estilos.
+                                                Úsalo lo menos posible, porque después es muy difícil corregir los estilos.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c4-4">Buenas prácticas</button>
+                                        </h3>
+                                        <div id="c4-4" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                <ul class="mb-0">
+                                                    <li>Usa clases en lugar de ids para dar estilo.</li>
+                                                    <li>Evita selectores muy largos.</li>
+                                                    <li>No uses estilos en línea ni <code>!important</code> para arreglar problemas.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-5">
+                                <img class="img-lado" src="https://picsum.photos/seed/css-especificidad-lado/800/500" alt="Imagen lateral del tema 2.4" loading="lazy">
+
+                                <div class="ventana-codigo mt-3">
+                                    <div class="barra"><span></span><span></span><span></span><b>estilos.css</b></div>
+<pre><code>p      { color: gray; }      /* 1   */
+.azul  { color: blue; }      /* 10  */
+#rosa  { color: deeppink; }  /* 100 */</code></pre>
+                                </div>
+
+                                <div class="demo demo-especificidad mt-3">
+                                    <p class="demo-titulo">Resultado</p>
+                                    <p class="mb-1">Solo etiqueta: gana el gris.</p>
+                                    <p class="azul mb-1">Etiqueta + clase: gana la clase.</p>
+                                    <p class="azul rosa mb-0" id="rosa">Etiqueta + clase + ID: gana el ID.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c4-4">Buenas prácticas</button>
-                            </h3>
-                            <div id="c4-4" class="accordion-collapse collapse" data-bs-parent="#acc4">
-                                <div class="accordion-body">
-                                    <ul class="mb-0">
-                                        <li>Usa clases en lugar de ids para dar estilo.</li>
-                                        <li>Evita selectores muy largos.</li>
-                                        <li>No uses estilos en línea ni <code>!important</code> para arreglar problemas.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-
-    <!-- ===== 2.5 FLEXBOX, GRID Y BREAKPOINTS ===== -->
-    <section class="tema fondo-a" id="tema5">
-        <div class="container">
-            <span class="numero">2.5</span>
-            <h2 class="mt-2">Flexbox, Grid y Breakpoints</h2>
-            <p class="lead">Las herramientas modernas para acomodar los elementos y adaptar la página a cada pantalla.</p>
-            <p><span class="badge bg-componente">Bootstrap: Grid · Forms · Table · Accordion</span></p>
-
-            <div class="row g-4">
-                <div class="col-lg-5 order-lg-2">
-                    <img class="img-tema" src="https://picsum.photos/seed/flexbox/800/500" alt="Imagen ilustrativa del tema 2.5" loading="lazy">
-
-                    <div class="demo mt-3">
-                        <p class="demo-titulo">Flexbox en vivo</p>
-                        <div class="row g-2 mb-3">
-                            <div class="col-6">
-                                <label class="form-label small mb-1" for="justify">justify-content</label>
-                                <select id="justify" class="form-select form-select-sm">
-                                    <option value="flex-start">flex-start</option>
-                                    <option value="center">center</option>
-                                    <option value="flex-end">flex-end</option>
-                                    <option value="space-between">space-between</option>
-                                    <option value="space-around">space-around</option>
-                                </select>
-                            </div>
-                            <div class="col-6">
-                                <label class="form-label small mb-1" for="alinear">align-items</label>
-                                <select id="alinear" class="form-select form-select-sm">
-                                    <option value="flex-start">flex-start</option>
-                                    <option value="center">center</option>
-                                    <option value="flex-end">flex-end</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="demo-flex" id="demo-flex">
-                            <div>1</div><div>2</div><div>3</div>
+                        <div class="d-flex justify-content-between mt-4">
+                            <button class="btn boton" data-ir="p-3"><i class="bi bi-arrow-left"></i> 2.3 Indentación y herencia</button>
+                            <button class="btn boton" data-ir="p-5">2.5 Flexbox y Grid <i class="bi bi-arrow-right"></i></button>
                         </div>
                     </div>
 
-                    <div class="demo">
-                        <p class="demo-titulo">CSS Grid (3 columnas)</p>
-                        <div class="demo-grid">
-                            <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+
+                    <!-- ========== 2.5 FLEXBOX, GRID Y BREAKPOINTS ========== -->
+                    <div class="tab-pane fade" id="p-5" role="tabpanel" tabindex="0">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#p-inicio" data-ir="p-inicio">Inicio</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">2.5 Flexbox, Grid y Breakpoints</li>
+                            </ol>
+                        </nav>
+
+                        <div class="banner">
+                            <img src="https://picsum.photos/seed/css-flexbox/1400/420" alt="Imagen del tema 2.5" loading="lazy">
+                            <div class="banner-texto">
+                                <span class="numero">2.5</span>
+                                <h2>Flexbox, Grid y Breakpoints</h2>
+                                <p class="d-none d-md-block mb-0">Las herramientas modernas para acomodar elementos y adaptar la página a cada pantalla.</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-7">
-                    <div class="accordion" id="acc5">
+                        <div class="barra-herramientas">
+                            <span class="badge bg-componente">Bootstrap: Grid · Forms · Table · Accordion</span>
+                            <div class="ms-auto d-flex gap-2">
+                                <button class="btn btn-sm boton" data-abrir="acc5"><i class="bi bi-arrows-expand"></i> Abrir todo</button>
+                                <button class="btn btn-sm boton" data-cerrar="acc5"><i class="bi bi-arrows-collapse"></i> Cerrar todo</button>
+                            </div>
+                        </div>
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c5-1">Flexbox</button>
-                            </h3>
-                            <div id="c5-1" class="accordion-collapse collapse show" data-bs-parent="#acc5">
-                                <div class="accordion-body">
-                                    Acomoda elementos en una sola dimensión (fila o columna). Se activa en el contenedor padre.
+                        <div class="row g-4">
+                            <div class="col-xl-7">
+                                <div class="accordion" id="acc5">
+
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c5-1">Flexbox</button>
+                                        </h3>
+                                        <div id="c5-1" class="accordion-collapse collapse show">
+                                            <div class="accordion-body">
+                                                Acomoda elementos en una sola dimensión (fila o columna). Se activa en el contenedor padre.
 <pre class="codigo-mini"><code>.contenedor {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
 }</code></pre>
-                                    <div class="table-responsive">
-                                        <table class="table table-sm tabla mb-0">
-                                            <thead><tr><th>Propiedad</th><th>Para qué sirve</th></tr></thead>
-                                            <tbody>
-                                                <tr><td><code>flex-direction</code></td><td>Fila (<code>row</code>) o columna (<code>column</code>)</td></tr>
-                                                <tr><td><code>justify-content</code></td><td>Alinea en el eje principal</td></tr>
-                                                <tr><td><code>align-items</code></td><td>Alinea en el eje cruzado</td></tr>
-                                                <tr><td><code>flex-wrap</code></td><td>Permite que pasen a otra línea</td></tr>
-                                                <tr><td><code>gap</code></td><td>Espacio entre elementos</td></tr>
-                                                <tr><td><code>flex</code></td><td>Cuánto crece o se encoge un hijo</td></tr>
-                                            </tbody>
-                                        </table>
+                                                <div class="table-responsive">
+                                                    <table class="table table-sm tabla mb-0">
+                                                        <thead><tr><th>Propiedad</th><th>Para qué sirve</th></tr></thead>
+                                                        <tbody>
+                                                            <tr><td><code>flex-direction</code></td><td>Fila (<code>row</code>) o columna (<code>column</code>)</td></tr>
+                                                            <tr><td><code>justify-content</code></td><td>Alinea en el eje principal</td></tr>
+                                                            <tr><td><code>align-items</code></td><td>Alinea en el eje cruzado</td></tr>
+                                                            <tr><td><code>flex-wrap</code></td><td>Permite que pasen a otra línea</td></tr>
+                                                            <tr><td><code>gap</code></td><td>Espacio entre elementos</td></tr>
+                                                            <tr><td><code>flex</code></td><td>Cuánto crece o se encoge un hijo</td></tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c5-2">CSS Grid</button>
-                            </h3>
-                            <div id="c5-2" class="accordion-collapse collapse" data-bs-parent="#acc5">
-                                <div class="accordion-body">
-                                    Acomoda elementos en dos dimensiones: filas y columnas a la vez.
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c5-2">CSS Grid</button>
+                                        </h3>
+                                        <div id="c5-2" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                Acomoda elementos en dos dimensiones: filas y columnas a la vez.
 <pre class="codigo-mini"><code>.cuadricula {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }</code></pre>
-                                    <p class="mb-0"><b>Flexbox o Grid:</b> usa Flexbox para una barra de menú o una fila de botones, y Grid para una cuadrícula completa de tarjetas.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c5-3">Breakpoints</button>
-                            </h3>
-                            <div id="c5-3" class="accordion-collapse collapse" data-bs-parent="#acc5">
-                                <div class="accordion-body">
-                                    Un breakpoint (punto de quiebre) es el ancho de pantalla donde el diseño cambia. Estos son los de Bootstrap:
-                                    <div class="table-responsive">
-                                        <table class="table table-sm tabla mt-2 mb-0">
-                                            <thead><tr><th>Nombre</th><th>Prefijo</th><th>Desde</th><th>Dispositivo</th></tr></thead>
-                                            <tbody>
-                                                <tr><td>Extra small</td><td><code>col-</code></td><td>0 px</td><td>Móvil</td></tr>
-                                                <tr><td>Small</td><td><code>col-sm-</code></td><td>576 px</td><td>Móvil grande</td></tr>
-                                                <tr><td>Medium</td><td><code>col-md-</code></td><td>768 px</td><td>Tablet</td></tr>
-                                                <tr><td>Large</td><td><code>col-lg-</code></td><td>992 px</td><td>Computador</td></tr>
-                                                <tr><td>Extra large</td><td><code>col-xl-</code></td><td>1200 px</td><td>Computador grande</td></tr>
-                                                <tr><td>XXL</td><td><code>col-xxl-</code></td><td>1400 px</td><td>Pantalla grande</td></tr>
-                                            </tbody>
-                                        </table>
+                                                <p class="mb-0"><b>Flexbox o Grid:</b> usa Flexbox para una barra de menú o una fila de botones, y Grid para una cuadrícula completa de tarjetas.</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c5-4">Grid de Bootstrap (12 columnas)</button>
-                            </h3>
-                            <div id="c5-4" class="accordion-collapse collapse" data-bs-parent="#acc5">
-                                <div class="accordion-body">
-                                    Bootstrap divide la fila en 12 columnas. Cambia el tamaño de la ventana y mira cómo pasan de 1, a 2 y a 4 por fila.
-                                    <div class="row g-2 text-center my-2">
-                                        <div class="col-12 col-md-6 col-lg-3"><div class="caja-demo">1</div></div>
-                                        <div class="col-12 col-md-6 col-lg-3"><div class="caja-demo">2</div></div>
-                                        <div class="col-12 col-md-6 col-lg-3"><div class="caja-demo">3</div></div>
-                                        <div class="col-12 col-md-6 col-lg-3"><div class="caja-demo">4</div></div>
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c5-3">Breakpoints</button>
+                                        </h3>
+                                        <div id="c5-3" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                Un breakpoint (punto de quiebre) es el ancho de pantalla donde el diseño cambia. Estos son los de Bootstrap:
+                                                <div class="table-responsive">
+                                                    <table class="table table-sm tabla mt-2 mb-0">
+                                                        <thead><tr><th>Nombre</th><th>Prefijo</th><th>Desde</th><th>Dispositivo</th></tr></thead>
+                                                        <tbody>
+                                                            <tr><td>Extra small</td><td><code>col-</code></td><td>0 px</td><td>Móvil</td></tr>
+                                                            <tr><td>Small</td><td><code>col-sm-</code></td><td>576 px</td><td>Móvil grande</td></tr>
+                                                            <tr><td>Medium</td><td><code>col-md-</code></td><td>768 px</td><td>Tablet</td></tr>
+                                                            <tr><td>Large</td><td><code>col-lg-</code></td><td>992 px</td><td>Computador</td></tr>
+                                                            <tr><td>Extra large</td><td><code>col-xl-</code></td><td>1200 px</td><td>Computador grande</td></tr>
+                                                            <tr><td>XXL</td><td><code>col-xxl-</code></td><td>1400 px</td><td>Pantalla grande</td></tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c5-4">Grid de Bootstrap (12 columnas)</button>
+                                        </h3>
+                                        <div id="c5-4" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                Bootstrap divide la fila en 12 columnas. Cambia el tamaño de la ventana y mira cómo pasan de 1, a 2 y a 4 por fila.
+                                                <div class="row g-2 text-center my-2">
+                                                    <div class="col-12 col-md-6 col-lg-3"><div class="caja-demo">1</div></div>
+                                                    <div class="col-12 col-md-6 col-lg-3"><div class="caja-demo">2</div></div>
+                                                    <div class="col-12 col-md-6 col-lg-3"><div class="caja-demo">3</div></div>
+                                                    <div class="col-12 col-md-6 col-lg-3"><div class="caja-demo">4</div></div>
+                                                </div>
 <pre class="codigo-mini"><code>&lt;div class="col-12 col-md-6 col-lg-3"&gt;...&lt;/div&gt;</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-xl-5">
+                                <img class="img-lado" src="https://picsum.photos/seed/css-flexbox-lado/800/500" alt="Imagen lateral del tema 2.5" loading="lazy">
+
+                                <div class="demo mt-3">
+                                    <p class="demo-titulo">Flexbox en vivo</p>
+                                    <div class="row g-2 mb-3">
+                                        <div class="col-6">
+                                            <label class="form-label small mb-1" for="justify">justify-content</label>
+                                            <select id="justify" class="form-select form-select-sm">
+                                                <option value="flex-start">flex-start</option>
+                                                <option value="center">center</option>
+                                                <option value="flex-end">flex-end</option>
+                                                <option value="space-between">space-between</option>
+                                                <option value="space-around">space-around</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-6">
+                                            <label class="form-label small mb-1" for="alinear">align-items</label>
+                                            <select id="alinear" class="form-select form-select-sm">
+                                                <option value="flex-start">flex-start</option>
+                                                <option value="center">center</option>
+                                                <option value="flex-end">flex-end</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="demo-flex" id="demo-flex">
+                                        <div>1</div><div>2</div><div>3</div>
+                                    </div>
+                                </div>
+
+                                <div class="demo">
+                                    <p class="demo-titulo">CSS Grid (3 columnas)</p>
+                                    <div class="demo-grid">
+                                        <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ===== 2.6 MEDIA QUERIES ===== -->
-    <section class="tema fondo-b" id="tema6">
-        <div class="container">
-            <span class="numero">2.6</span>
-            <h2 class="mt-2">Media queries</h2>
-            <p class="lead">Permiten aplicar estilos solo cuando se cumple una condición, como el ancho de la pantalla.</p>
-            <p><span class="badge bg-componente">Bootstrap: Alert · Badge · Accordion</span></p>
-
-            <div class="row g-4">
-                <div class="col-lg-5">
-                    <img class="img-tema" src="https://picsum.photos/seed/mediaqueries/800/500" alt="Imagen ilustrativa del tema 2.6" loading="lazy">
-
-                    <div class="demo mt-3 text-center">
-                        <p class="demo-titulo">Tu pantalla ahora</p>
-                        <p class="indicador mb-1"><span id="ancho">0</span> px</p>
-                        <span class="badge etiqueta" id="tipo-dispositivo">Móvil</span>
-                        <p class="small mt-2 mb-0">Cambia el tamaño de la ventana y mira cómo se actualiza (según los breakpoints de Bootstrap).</p>
+                        <div class="d-flex justify-content-between mt-4">
+                            <button class="btn boton" data-ir="p-4"><i class="bi bi-arrow-left"></i> 2.4 Especificidad</button>
+                            <button class="btn boton" data-ir="p-6">2.6 Media queries <i class="bi bi-arrow-right"></i></button>
+                        </div>
                     </div>
 
-                    <div class="alert aviso mt-3" role="alert">
-                        <i class="bi bi-lightbulb"></i> <b>Tip:</b> en el navegador presiona <b>F12</b> y luego <b>Ctrl + Shift + M</b> para probar el modo de dispositivos.
-                    </div>
-                </div>
 
-                <div class="col-lg-7">
-                    <div class="accordion" id="acc6">
+                    <!-- ========== 2.6 MEDIA QUERIES ========== -->
+                    <div class="tab-pane fade" id="p-6" role="tabpanel" tabindex="0">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#p-inicio" data-ir="p-inicio">Inicio</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">2.6 Media queries</li>
+                            </ol>
+                        </nav>
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c6-1">Sintaxis</button>
-                            </h3>
-                            <div id="c6-1" class="accordion-collapse collapse show" data-bs-parent="#acc6">
-                                <div class="accordion-body">
-                                    Se escribe con <code>@media</code>, una condición entre paréntesis y un bloque con las reglas que se aplican:
+                        <div class="banner">
+                            <img src="https://picsum.photos/seed/css-media/1400/420" alt="Imagen del tema 2.6" loading="lazy">
+                            <div class="banner-texto">
+                                <span class="numero">2.6</span>
+                                <h2>Media queries</h2>
+                                <p class="d-none d-md-block mb-0">Aplican estilos solo cuando se cumple una condición, como el ancho de la pantalla.</p>
+                            </div>
+                        </div>
+
+                        <div class="barra-herramientas">
+                            <span class="badge bg-componente">Bootstrap: Alert · Badge · Accordion</span>
+                            <div class="ms-auto d-flex gap-2">
+                                <button class="btn btn-sm boton" data-abrir="acc6"><i class="bi bi-arrows-expand"></i> Abrir todo</button>
+                                <button class="btn btn-sm boton" data-cerrar="acc6"><i class="bi bi-arrows-collapse"></i> Cerrar todo</button>
+                            </div>
+                        </div>
+
+                        <div class="row g-4">
+                            <div class="col-xl-7">
+                                <div class="accordion" id="acc6">
+
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c6-1">Sintaxis</button>
+                                        </h3>
+                                        <div id="c6-1" class="accordion-collapse collapse show">
+                                            <div class="accordion-body">
+                                                Se escribe con <code>@media</code>, una condición entre paréntesis y un bloque con las reglas que se aplican:
 <pre class="codigo-mini"><code>@media (min-width: 768px) {
   .portada {
     padding: 60px 0;
   }
 }</code></pre>
-                                    Esto significa: &laquo;cuando la pantalla mida 768 px o más, aplica este padding&raquo;.
-                                </div>
-                            </div>
-                        </div>
+                                                Esto significa: &laquo;cuando la pantalla mida 768 px o más, aplica este padding&raquo;.
+                                            </div>
+                                        </div>
+                                    </div>
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c6-2">Mobile first y desktop first</button>
-                            </h3>
-                            <div id="c6-2" class="accordion-collapse collapse" data-bs-parent="#acc6">
-                                <div class="accordion-body">
-                                    <b>Mobile first:</b> el CSS normal es para móvil y con <code>min-width</code> se agregan cambios para pantallas más grandes. Es lo que usa Bootstrap y lo más recomendado.<br>
-                                    <b>Desktop first:</b> el CSS normal es para computador y con <code>max-width</code> se hacen cambios para pantallas más pequeñas.
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c6-2">Mobile first y desktop first</button>
+                                        </h3>
+                                        <div id="c6-2" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                <b>Mobile first:</b> el CSS normal es para móvil y con <code>min-width</code> se agregan cambios para pantallas más grandes. Es lo que usa Bootstrap y lo más recomendado.<br>
+                                                <b>Desktop first:</b> el CSS normal es para computador y con <code>max-width</code> se hacen cambios para pantallas más pequeñas.
 <pre class="codigo-mini"><code>/* mobile first */
 @media (min-width: 768px) { ... }
 
 /* desktop first */
 @media (max-width: 767px) { ... }</code></pre>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c6-3">Condiciones más usadas</button>
-                            </h3>
-                            <div id="c6-3" class="accordion-collapse collapse" data-bs-parent="#acc6">
-                                <div class="accordion-body">
-                                    <div class="table-responsive">
-                                        <table class="table table-sm tabla mb-0">
-                                            <thead><tr><th>Condición</th><th>Ejemplo</th></tr></thead>
-                                            <tbody>
-                                                <tr><td>Ancho mínimo / máximo</td><td><code>(min-width: 600px)</code></td></tr>
-                                                <tr><td>Orientación</td><td><code>(orientation: landscape)</code></td></tr>
-                                                <tr><td>Modo oscuro</td><td><code>(prefers-color-scheme: dark)</code></td></tr>
-                                                <tr><td>Reducir animaciones</td><td><code>(prefers-reduced-motion: reduce)</code></td></tr>
-                                                <tr><td>Impresión</td><td><code>print</code></td></tr>
-                                            </tbody>
-                                        </table>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c6-4">Combinar condiciones</button>
-                            </h3>
-                            <div id="c6-4" class="accordion-collapse collapse" data-bs-parent="#acc6">
-                                <div class="accordion-body">
-                                    Con <code>and</code> se deben cumplir las dos. Con una coma se cumple una u otra.
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c6-3">Condiciones más usadas</button>
+                                        </h3>
+                                        <div id="c6-3" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-sm tabla mb-0">
+                                                        <thead><tr><th>Condición</th><th>Ejemplo</th></tr></thead>
+                                                        <tbody>
+                                                            <tr><td>Ancho mínimo / máximo</td><td><code>(min-width: 600px)</code></td></tr>
+                                                            <tr><td>Orientación</td><td><code>(orientation: landscape)</code></td></tr>
+                                                            <tr><td>Modo oscuro</td><td><code>(prefers-color-scheme: dark)</code></td></tr>
+                                                            <tr><td>Reducir animaciones</td><td><code>(prefers-reduced-motion: reduce)</code></td></tr>
+                                                            <tr><td>Impresión</td><td><code>print</code></td></tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c6-4">Combinar condiciones</button>
+                                        </h3>
+                                        <div id="c6-4" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                Con <code>and</code> se deben cumplir las dos. Con una coma se cumple una u otra.
 <pre class="codigo-mini"><code>/* solo en tablet */
 @media (min-width: 600px) and (max-width: 1023px) {
   .morado { background-color: #00839A; }
@@ -947,387 +1112,450 @@ nav ul li a
 
 /* en móvil o en horizontal */
 @media (max-width: 599px), (orientation: landscape) { ... }</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-xl-5">
+                                <img class="img-lado" src="https://picsum.photos/seed/css-media-lado/800/500" alt="Imagen lateral del tema 2.6" loading="lazy">
+
+                                <div class="demo mt-3 text-center">
+                                    <p class="demo-titulo">Tu pantalla ahora</p>
+                                    <p class="indicador mb-1"><span id="ancho">0</span> px</p>
+                                    <span class="badge etiqueta" id="tipo-dispositivo">Móvil</span>
+                                    <p class="small mt-2 mb-0">Cambia el tamaño de la ventana y mira cómo se actualiza.</p>
+                                </div>
+
+                                <div class="alert aviso mt-3" role="alert">
+                                    <i class="bi bi-lightbulb"></i> <b>Tip:</b> en el navegador presiona <b>F12</b> y luego <b>Ctrl + Shift + M</b> para probar el modo de dispositivos.
                                 </div>
                             </div>
                         </div>
 
+                        <div class="d-flex justify-content-between mt-4">
+                            <button class="btn boton" data-ir="p-5"><i class="bi bi-arrow-left"></i> 2.5 Flexbox y Grid</button>
+                            <button class="btn boton" data-ir="p-7">2.7 Pseudo-elementos <i class="bi bi-arrow-right"></i></button>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
-    <!-- ===== 2.7 PSEUDO-ELEMENTOS ===== -->
-    <section class="tema fondo-a" id="tema7">
-        <div class="container">
-            <span class="numero">2.7</span>
-            <h2 class="mt-2">Pseudo-elementos</h2>
-            <p class="lead">Dan estilo a una parte específica de un elemento o agregan contenido sin tocar el HTML. Se escriben con dos puntos dobles <code>::</code>.</p>
-            <p><span class="badge bg-componente">Bootstrap: Accordion · Form control</span></p>
+                    <!-- ========== 2.7 PSEUDO-ELEMENTOS ========== -->
+                    <div class="tab-pane fade" id="p-7" role="tabpanel" tabindex="0">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#p-inicio" data-ir="p-inicio">Inicio</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">2.7 Pseudo-elementos</li>
+                            </ol>
+                        </nav>
 
-            <div class="row g-4">
-                <div class="col-lg-5 order-lg-2">
-                    <img class="img-tema" src="https://picsum.photos/seed/pseudoelementos/800/500" alt="Imagen ilustrativa del tema 2.7" loading="lazy">
+                        <div class="banner">
+                            <img src="https://picsum.photos/seed/css-pseudoelementos/1400/420" alt="Imagen del tema 2.7" loading="lazy">
+                            <div class="banner-texto">
+                                <span class="numero">2.7</span>
+                                <h2>Pseudo-elementos</h2>
+                                <p class="d-none d-md-block mb-0">Dan estilo a una parte de un elemento o agregan contenido sin tocar el HTML. Se escriben con <code class="text-white">::</code></p>
+                            </div>
+                        </div>
 
-                    <div class="ventana-codigo mt-3">
-                        <div class="barra"><span></span><span></span><span></span><b>estilos.css</b></div>
+                        <div class="barra-herramientas">
+                            <span class="badge bg-componente">Bootstrap: Accordion · Form control</span>
+                            <div class="ms-auto d-flex gap-2">
+                                <button class="btn btn-sm boton" data-abrir="acc7"><i class="bi bi-arrows-expand"></i> Abrir todo</button>
+                                <button class="btn btn-sm boton" data-cerrar="acc7"><i class="bi bi-arrows-collapse"></i> Cerrar todo</button>
+                            </div>
+                        </div>
+
+                        <div class="row g-4">
+                            <div class="col-xl-7">
+                                <div class="accordion" id="acc7">
+
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c7-1">::before y ::after</button>
+                                        </h3>
+                                        <div id="c7-1" class="accordion-collapse collapse show">
+                                            <div class="accordion-body">
+                                                Insertan contenido antes o después del contenido del elemento. Siempre necesitan la propiedad <code>content</code>, aunque sea vacía (<code>content: "";</code>).
+                                                <div class="demo mt-2 mb-0">
+                                                    <p class="pe-ba mb-0">Texto con adornos</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c7-2">::first-letter y ::first-line</button>
+                                        </h3>
+                                        <div id="c7-2" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                Dan estilo a la primera letra o a la primera línea de un párrafo (efecto de revista).
+<pre class="codigo-mini"><code>p::first-letter { font-size: 2.5rem; color: #E58FB1; }
+p::first-line   { font-weight: 700; }</code></pre>
+                                                <div class="demo mb-0">
+                                                    <p class="pe-letra mb-0">El CSS permite darle estilo a la primera letra y a la primera línea de un texto largo, como si fuera un artículo de una revista, sin agregar etiquetas nuevas al HTML.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c7-3">::selection</button>
+                                        </h3>
+                                        <div id="c7-3" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                Cambia el color del texto cuando el usuario lo selecciona con el mouse.
+                                                <div class="demo mt-2 mb-0">
+                                                    <p class="pe-seleccion mb-0">Selecciona este texto con el mouse para ver el cambio.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c7-4">::placeholder</button>
+                                        </h3>
+                                        <div id="c7-4" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                Da estilo al texto de ayuda que aparece dentro de un campo vacío.
+                                                <input type="text" class="form-control pe-placeholder mt-2" placeholder="Escribe tu nombre">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c7-5">::marker</button>
+                                        </h3>
+                                        <div id="c7-5" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                Cambia el punto o el número de una lista.
+                                                <ul class="pe-marker mt-2 mb-0">
+                                                    <li>Primer elemento</li>
+                                                    <li>Segundo elemento</li>
+                                                    <li>Tercer elemento</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-xl-5">
+                                <img class="img-lado" src="https://picsum.photos/seed/css-pseudoelementos-lado/800/500" alt="Imagen lateral del tema 2.7" loading="lazy">
+
+                                <div class="ventana-codigo mt-3">
+                                    <div class="barra"><span></span><span></span><span></span><b>estilos.css</b></div>
 <pre><code>.nota::before {
   content: "✿ ";
 }
 .nota::after {
   content: " ✿";
 }</code></pre>
-                    </div>
-                </div>
-
-                <div class="col-lg-7">
-                    <div class="accordion" id="acc7">
-
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c7-1">::before y ::after</button>
-                            </h3>
-                            <div id="c7-1" class="accordion-collapse collapse show" data-bs-parent="#acc7">
-                                <div class="accordion-body">
-                                    Insertan contenido antes o después del contenido del elemento. Siempre necesitan la propiedad <code>content</code>, aunque sea vacía (<code>content: "";</code>).
-                                    <div class="demo mt-2 mb-0">
-                                        <p class="pe-ba mb-0">Texto con adornos</p>
-                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c7-2">::first-letter y ::first-line</button>
-                            </h3>
-                            <div id="c7-2" class="accordion-collapse collapse" data-bs-parent="#acc7">
-                                <div class="accordion-body">
-                                    Dan estilo a la primera letra o a la primera línea de un párrafo (efecto de revista).
-<pre class="codigo-mini"><code>p::first-letter { font-size: 2.5rem; color: #E58FB1; }
-p::first-line   { font-weight: 700; }</code></pre>
-                                    <div class="demo mb-0">
-                                        <p class="pe-letra mb-0">El CSS permite darle estilo a la primera letra y a la primera línea de un texto largo, como si fuera un artículo de una revista, sin agregar etiquetas nuevas al HTML.</p>
-                                    </div>
-                                </div>
+                        <div class="d-flex justify-content-between mt-4">
+                            <button class="btn boton" data-ir="p-6"><i class="bi bi-arrow-left"></i> 2.6 Media queries</button>
+                            <button class="btn boton" data-ir="p-8">2.8 Pseudo-clases <i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+
+                    <!-- ========== 2.8 PSEUDO-CLASES ========== -->
+                    <div class="tab-pane fade" id="p-8" role="tabpanel" tabindex="0">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#p-inicio" data-ir="p-inicio">Inicio</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">2.8 Pseudo-clases</li>
+                            </ol>
+                        </nav>
+
+                        <div class="banner">
+                            <img src="https://picsum.photos/seed/css-pseudoclases/1400/420" alt="Imagen del tema 2.8" loading="lazy">
+                            <div class="banner-texto">
+                                <span class="numero">2.8</span>
+                                <h2>Pseudo-clases</h2>
+                                <p class="d-none d-md-block mb-0">Aplican estilos según el estado o la posición de un elemento. Se escriben con dos puntos.</p>
                             </div>
                         </div>
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c7-3">::selection</button>
-                            </h3>
-                            <div id="c7-3" class="accordion-collapse collapse" data-bs-parent="#acc7">
-                                <div class="accordion-body">
-                                    Cambia el color del texto cuando el usuario lo selecciona con el mouse.
-                                    <div class="demo mt-2 mb-0">
-                                        <p class="pe-seleccion mb-0">Selecciona este texto con el mouse para ver el cambio.</p>
-                                    </div>
-                                </div>
+                        <div class="barra-herramientas">
+                            <span class="badge bg-componente">Bootstrap: Button · Form switch · Accordion</span>
+                            <div class="ms-auto d-flex gap-2">
+                                <button class="btn btn-sm boton" data-abrir="acc8"><i class="bi bi-arrows-expand"></i> Abrir todo</button>
+                                <button class="btn btn-sm boton" data-cerrar="acc8"><i class="bi bi-arrows-collapse"></i> Cerrar todo</button>
                             </div>
                         </div>
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c7-4">::placeholder</button>
-                            </h3>
-                            <div id="c7-4" class="accordion-collapse collapse" data-bs-parent="#acc7">
-                                <div class="accordion-body">
-                                    Da estilo al texto de ayuda que aparece dentro de un campo vacío.
-                                    <input type="text" class="form-control pe-placeholder mt-2" placeholder="Escribe tu nombre">
-                                </div>
-                            </div>
-                        </div>
+                        <div class="row g-4">
+                            <div class="col-xl-7">
+                                <div class="accordion" id="acc8">
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c7-5">::marker</button>
-                            </h3>
-                            <div id="c7-5" class="accordion-collapse collapse" data-bs-parent="#acc7">
-                                <div class="accordion-body">
-                                    Cambia el punto o el número de una lista.
-                                    <ul class="pe-marker mt-2 mb-0">
-                                        <li>Primer elemento</li>
-                                        <li>Segundo elemento</li>
-                                        <li>Tercer elemento</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ===== 2.8 PSEUDO-CLASES ===== -->
-    <section class="tema fondo-b" id="tema8">
-        <div class="container">
-            <span class="numero">2.8</span>
-            <h2 class="mt-2">Pseudo-clases</h2>
-            <p class="lead">Aplican estilos según el estado o la posición de un elemento. Se escriben con dos puntos <code>:</code>.</p>
-            <p><span class="badge bg-componente">Bootstrap: Button · Form switch · Accordion</span></p>
-
-            <div class="row g-4">
-                <div class="col-lg-5">
-                    <img class="img-tema" src="https://picsum.photos/seed/pseudoclases/800/500" alt="Imagen ilustrativa del tema 2.8" loading="lazy">
-
-                    <div class="demo mt-3">
-                        <p class="demo-titulo">:hover y :active</p>
-                        <button class="btn btn-pc">Pasa el mouse y haz clic</button>
-                    </div>
-
-                    <div class="demo">
-                        <p class="demo-titulo">:focus</p>
-                        <input type="text" class="form-control input-pc" placeholder="Haz clic aquí">
-                    </div>
-
-                    <div class="demo">
-                        <p class="demo-titulo">:first-child, :nth-child y :last-child</p>
-                        <ul class="list-unstyled lista-pc mb-0">
-                            <li>Elemento 1 (primero)</li>
-                            <li>Elemento 2</li>
-                            <li>Elemento 3</li>
-                            <li>Elemento 4</li>
-                            <li>Elemento 5 (último)</li>
-                        </ul>
-                    </div>
-
-                    <div class="demo">
-                        <p class="demo-titulo">:checked</p>
-                        <div class="form-check form-switch">
-                            <input class="form-check-input check-pc" type="checkbox" id="interruptor">
-                            <label class="form-check-label" for="interruptor">Activa o desactiva</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-7">
-                    <div class="accordion" id="acc8">
-
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c8-1">De interacción</button>
-                            </h3>
-                            <div id="c8-1" class="accordion-collapse collapse show" data-bs-parent="#acc8">
-                                <div class="accordion-body">
-                                    <ul class="mb-2">
-                                        <li><code>:hover</code>: cuando el mouse está encima.</li>
-                                        <li><code>:active</code>: mientras se mantiene el clic.</li>
-                                        <li><code>:focus</code>: cuando el elemento está seleccionado (por ejemplo, un campo de texto).</li>
-                                        <li><code>:visited</code> y <code>:link</code>: enlaces visitados y no visitados.</li>
-                                    </ul>
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c8-1">De interacción</button>
+                                        </h3>
+                                        <div id="c8-1" class="accordion-collapse collapse show">
+                                            <div class="accordion-body">
+                                                <ul class="mb-2">
+                                                    <li><code>:hover</code>: cuando el mouse está encima.</li>
+                                                    <li><code>:active</code>: mientras se mantiene el clic.</li>
+                                                    <li><code>:focus</code>: cuando el elemento está seleccionado (por ejemplo, un campo de texto).</li>
+                                                    <li><code>:visited</code> y <code>:link</code>: enlaces visitados y no visitados.</li>
+                                                </ul>
 <pre class="codigo-mini"><code>.btn-pc:hover  { background-color: #E58FB1; }
 .btn-pc:active { transform: scale(0.95); }</code></pre>
-                                </div>
-                            </div>
-                        </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c8-2">De posición (estructura)</button>
-                            </h3>
-                            <div id="c8-2" class="accordion-collapse collapse" data-bs-parent="#acc8">
-                                <div class="accordion-body">
-                                    <ul class="mb-2">
-                                        <li><code>:first-child</code> y <code>:last-child</code>: el primer y el último hijo.</li>
-                                        <li><code>:nth-child(2)</code>: el segundo hijo.</li>
-                                        <li><code>:nth-child(odd)</code> y <code>:nth-child(even)</code>: impares y pares.</li>
-                                    </ul>
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c8-2">De posición (estructura)</button>
+                                        </h3>
+                                        <div id="c8-2" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                <ul class="mb-2">
+                                                    <li><code>:first-child</code> y <code>:last-child</code>: el primer y el último hijo.</li>
+                                                    <li><code>:nth-child(2)</code>: el segundo hijo.</li>
+                                                    <li><code>:nth-child(odd)</code> y <code>:nth-child(even)</code>: impares y pares.</li>
+                                                </ul>
 <pre class="codigo-mini"><code>li:nth-child(odd)  { background: #F8C8DC; }
 li:nth-child(even) { background: #C9F2E3; }</code></pre>
-                                </div>
-                            </div>
-                        </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c8-3">De formularios</button>
-                            </h3>
-                            <div id="c8-3" class="accordion-collapse collapse" data-bs-parent="#acc8">
-                                <div class="accordion-body">
-                                    <ul class="mb-2">
-                                        <li><code>:checked</code>: casilla o interruptor marcado.</li>
-                                        <li><code>:disabled</code>: campo desactivado.</li>
-                                        <li><code>:required</code>: campo obligatorio.</li>
-                                        <li><code>:valid</code> y <code>:invalid</code>: contenido correcto o incorrecto.</li>
-                                    </ul>
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c8-3">De formularios</button>
+                                        </h3>
+                                        <div id="c8-3" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                <ul class="mb-2">
+                                                    <li><code>:checked</code>: casilla o interruptor marcado.</li>
+                                                    <li><code>:disabled</code>: campo desactivado.</li>
+                                                    <li><code>:required</code>: campo obligatorio.</li>
+                                                    <li><code>:valid</code> y <code>:invalid</code>: contenido correcto o incorrecto.</li>
+                                                </ul>
 <pre class="codigo-mini"><code>input:disabled { opacity: 0.5; }
 input:invalid  { border-color: red; }</code></pre>
-                                </div>
-                            </div>
-                        </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c8-4">:not() y otras útiles</button>
-                            </h3>
-                            <div id="c8-4" class="accordion-collapse collapse" data-bs-parent="#acc8">
-                                <div class="accordion-body">
-                                    <code>:not()</code> selecciona todo lo que <b>no</b> cumpla una condición. <code>:focus-within</code> se activa cuando algún hijo tiene el foco.
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c8-4">:not() y otras útiles</button>
+                                        </h3>
+                                        <div id="c8-4" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                <code>:not()</code> selecciona todo lo que <b>no</b> cumpla una condición. <code>:focus-within</code> se activa cuando algún hijo tiene el foco.
 <pre class="codigo-mini"><code>p:not(.nota) { color: gray; }
 form:focus-within { border-color: #E58FB1; }</code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c8-5">Diferencia con los pseudo-elementos</button>
+                                        </h3>
+                                        <div id="c8-5" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                Las <b>pseudo-clases</b> (<code>:</code>) hablan del <b>estado</b> de un elemento completo. Los <b>pseudo-elementos</b> (<code>::</code>) hablan de una <b>parte</b> del elemento o de contenido agregado.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-xl-5">
+                                <img class="img-lado" src="https://picsum.photos/seed/css-pseudoclases-lado/800/500" alt="Imagen lateral del tema 2.8" loading="lazy">
+
+                                <div class="demo mt-3">
+                                    <p class="demo-titulo">:hover y :active</p>
+                                    <button class="btn btn-pc">Pasa el mouse y haz clic</button>
+                                </div>
+
+                                <div class="demo">
+                                    <p class="demo-titulo">:focus</p>
+                                    <input type="text" class="form-control input-pc" placeholder="Haz clic aquí">
+                                </div>
+
+                                <div class="demo">
+                                    <p class="demo-titulo">:first-child, :nth-child y :last-child</p>
+                                    <ul class="list-unstyled lista-pc mb-0">
+                                        <li>Elemento 1 (primero)</li>
+                                        <li>Elemento 2</li>
+                                        <li>Elemento 3</li>
+                                        <li>Elemento 4</li>
+                                        <li>Elemento 5 (último)</li>
+                                    </ul>
+                                </div>
+
+                                <div class="demo">
+                                    <p class="demo-titulo">:checked</p>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input check-pc" type="checkbox" id="interruptor">
+                                        <label class="form-check-label" for="interruptor">Activa o desactiva</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c8-5">Diferencia con los pseudo-elementos</button>
-                            </h3>
-                            <div id="c8-5" class="accordion-collapse collapse" data-bs-parent="#acc8">
-                                <div class="accordion-body">
-                                    Las <b>pseudo-clases</b> (<code>:</code>) hablan del <b>estado</b> de un elemento completo. Los <b>pseudo-elementos</b> (<code>::</code>) hablan de una <b>parte</b> del elemento o de contenido agregado.
-                                </div>
+                        <div class="d-flex justify-content-between mt-4">
+                            <button class="btn boton" data-ir="p-7"><i class="bi bi-arrow-left"></i> 2.7 Pseudo-elementos</button>
+                            <button class="btn boton" data-ir="p-9">2.9 Z-index <i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+
+
+                    <!-- ========== 2.9 Z-INDEX ========== -->
+                    <div class="tab-pane fade" id="p-9" role="tabpanel" tabindex="0">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#p-inicio" data-ir="p-inicio">Inicio</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">2.9 Z-index</li>
+                            </ol>
+                        </nav>
+
+                        <div class="banner">
+                            <img src="https://picsum.photos/seed/css-zindex/1400/420" alt="Imagen del tema 2.9" loading="lazy">
+                            <div class="banner-texto">
+                                <span class="numero">2.9</span>
+                                <h2>Z-index</h2>
+                                <p class="d-none d-md-block mb-0">Controla qué elemento queda encima de otro cuando se superponen. Entre más alto el número, más cerca del usuario.</p>
                             </div>
                         </div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ===== 2.9 Z-INDEX ===== -->
-    <section class="tema fondo-a" id="tema9">
-        <div class="container">
-            <span class="numero">2.9</span>
-            <h2 class="mt-2">Z-index</h2>
-            <p class="lead">Controla qué elemento queda encima de otro cuando se superponen. Entre más alto el número, más cerca del usuario.</p>
-            <p><span class="badge bg-componente">Bootstrap: Modal · Toast · Accordion</span></p>
-
-            <div class="row g-4">
-                <div class="col-lg-5 order-lg-2">
-                    <img class="img-tema" src="https://picsum.photos/seed/zindex/800/500" alt="Imagen ilustrativa del tema 2.9" loading="lazy">
-
-                    <div class="demo mt-3">
-                        <p class="demo-titulo">Capas en vivo</p>
-                        <div class="pila">
-                            <div class="z1" id="capa1">z-index: 1</div>
-                            <div class="z2">z-index: 2</div>
-                            <div class="z3">z-index: 3</div>
+                        <div class="barra-herramientas">
+                            <span class="badge bg-componente">Bootstrap: Modal · Toast · Accordion</span>
+                            <div class="ms-auto d-flex gap-2">
+                                <button class="btn btn-sm boton" data-abrir="acc9"><i class="bi bi-arrows-expand"></i> Abrir todo</button>
+                                <button class="btn btn-sm boton" data-cerrar="acc9"><i class="bi bi-arrows-collapse"></i> Cerrar todo</button>
+                            </div>
                         </div>
-                        <button class="btn boton btn-sm mb-1" id="btnCapa">Traer la capa 1 al frente</button>
-                        <button class="btn boton btn-sm mb-1" data-bs-toggle="modal" data-bs-target="#modalZ">Abrir modal</button>
-                        <button class="btn boton btn-sm mb-1" id="btnToast">Mostrar toast</button>
-                    </div>
-                </div>
 
-                <div class="col-lg-7">
-                    <div class="accordion" id="acc9">
+                        <div class="row g-4">
+                            <div class="col-xl-7">
+                                <div class="accordion" id="acc9">
 
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c9-1">¿Cómo funciona?</button>
-                            </h3>
-                            <div id="c9-1" class="accordion-collapse collapse show" data-bs-parent="#acc9">
-                                <div class="accordion-body">
-                                    El z-index solo funciona en elementos con <code>position</code> distinto de <code>static</code> (<code>relative</code>, <code>absolute</code>, <code>fixed</code> o <code>sticky</code>), o en hijos de un contenedor flex o grid.
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c9-1">¿Cómo funciona?</button>
+                                        </h3>
+                                        <div id="c9-1" class="accordion-collapse collapse show">
+                                            <div class="accordion-body">
+                                                El z-index solo funciona en elementos con <code>position</code> distinto de <code>static</code> (<code>relative</code>, <code>absolute</code>, <code>fixed</code> o <code>sticky</code>), o en hijos de un contenedor flex o grid.
 <pre class="codigo-mini"><code>.capa {
   position: relative;
   z-index: 10;
 }</code></pre>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c9-2">Valores posibles</button>
-                            </h3>
-                            <div id="c9-2" class="accordion-collapse collapse" data-bs-parent="#acc9">
-                                <div class="accordion-body">
-                                    <ul class="mb-0">
-                                        <li>Números enteros: <code>z-index: 5;</code> (mayor número = más arriba).</li>
-                                        <li>Negativos: <code>z-index: -1;</code> (queda detrás del contenido).</li>
-                                        <li><code>auto</code>: valor por defecto, sigue el orden del HTML.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c9-3">Contexto de apilamiento</button>
-                            </h3>
-                            <div id="c9-3" class="accordion-collapse collapse" data-bs-parent="#acc9">
-                                <div class="accordion-body">
-                                    Un elemento con <code>position</code> y <code>z-index</code> crea su propio &laquo;grupo de capas&raquo;. Un hijo nunca puede quedar por encima de algo que esté fuera de ese grupo y tenga un z-index mayor, aunque el hijo tenga un número altísimo. Por eso a veces un <code>z-index: 9999</code> no funciona.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <h3 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c9-4">Escala de z-index en Bootstrap</button>
-                            </h3>
-                            <div id="c9-4" class="accordion-collapse collapse" data-bs-parent="#acc9">
-                                <div class="accordion-body">
-                                    <div class="table-responsive">
-                                        <table class="table table-sm tabla mb-0">
-                                            <thead><tr><th>Componente</th><th>z-index</th></tr></thead>
-                                            <tbody>
-                                                <tr><td>Dropdown</td><td>1000</td></tr>
-                                                <tr><td>Sticky (menú fijo)</td><td>1020</td></tr>
-                                                <tr><td>Fixed</td><td>1030</td></tr>
-                                                <tr><td>Modal (fondo oscuro)</td><td>1050</td></tr>
-                                                <tr><td>Modal</td><td>1055</td></tr>
-                                                <tr><td>Tooltip</td><td>1080</td></tr>
-                                                <tr><td>Toast</td><td>1090</td></tr>
-                                            </tbody>
-                                        </table>
+                                            </div>
+                                        </div>
                                     </div>
+
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c9-2">Valores posibles</button>
+                                        </h3>
+                                        <div id="c9-2" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                <ul class="mb-0">
+                                                    <li>Números enteros: <code>z-index: 5;</code> (mayor número = más arriba).</li>
+                                                    <li>Negativos: <code>z-index: -1;</code> (queda detrás del contenido).</li>
+                                                    <li><code>auto</code>: valor por defecto, sigue el orden del HTML.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c9-3">Contexto de apilamiento</button>
+                                        </h3>
+                                        <div id="c9-3" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                Un elemento con <code>position</code> y <code>z-index</code> crea su propio &laquo;grupo de capas&raquo;. Un hijo nunca puede quedar por encima de algo que esté fuera de ese grupo y tenga un z-index mayor, aunque el hijo tenga un número altísimo. Por eso a veces un <code>z-index: 9999</code> no funciona.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h3 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c9-4">Escala de z-index en Bootstrap</button>
+                                        </h3>
+                                        <div id="c9-4" class="accordion-collapse collapse">
+                                            <div class="accordion-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-sm tabla mb-0">
+                                                        <thead><tr><th>Componente</th><th>z-index</th></tr></thead>
+                                                        <tbody>
+                                                            <tr><td>Dropdown</td><td>1000</td></tr>
+                                                            <tr><td>Sticky (menú fijo)</td><td>1020</td></tr>
+                                                            <tr><td>Fixed</td><td>1030</td></tr>
+                                                            <tr><td>Offcanvas</td><td>1045</td></tr>
+                                                            <tr><td>Modal (fondo oscuro)</td><td>1050</td></tr>
+                                                            <tr><td>Modal</td><td>1055</td></tr>
+                                                            <tr><td>Tooltip</td><td>1080</td></tr>
+                                                            <tr><td>Toast</td><td>1090</td></tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="col-xl-5">
+                                <img class="img-lado" src="https://picsum.photos/seed/css-zindex-lado/800/500" alt="Imagen lateral del tema 2.9" loading="lazy">
+
+                                <div class="demo mt-3">
+                                    <p class="demo-titulo">Capas en vivo</p>
+                                    <div class="pila">
+                                        <div class="z1" id="capa1">z-index: 1</div>
+                                        <div class="z2">z-index: 2</div>
+                                        <div class="z3">z-index: 3</div>
+                                    </div>
+                                    <button class="btn boton btn-sm mb-1" id="btnCapa">Traer la capa 1 al frente</button>
+                                    <button class="btn boton btn-sm mb-1" data-bs-toggle="modal" data-bs-target="#modalZ">Abrir modal</button>
+                                    <button class="btn boton btn-sm mb-1" id="btnToast">Mostrar toast</button>
                                 </div>
                             </div>
                         </div>
 
+                        <div class="d-flex justify-content-between mt-4">
+                            <button class="btn boton" data-ir="p-8"><i class="bi bi-arrow-left"></i> 2.8 Pseudo-clases</button>
+                            <button class="btn boton" data-ir="p-inicio">Volver al índice <i class="bi bi-house-door"></i></button>
+                        </div>
                     </div>
+
                 </div>
-            </div>
+
+                <!-- ===== PIE DE PÁGINA ===== -->
+                <footer class="pie text-center py-4 mt-5">
+                    <p class="mb-1"><b>Guía de CSS</b> · Temas 2.1 al 2.9</p>
+                    <p class="mb-0 small">Proyecto CSS · ADSO · Ficha 3404915</p>
+                </footer>
+            </main>
+
         </div>
-    </section>
-
-
-    <!-- ===== RESUMEN ===== -->
-    <section class="py-5" id="resumen">
-        <div class="container">
-            <h2 class="titulo-seccion">Resumen</h2>
-            <div class="table-responsive">
-                <table class="table tabla align-middle">
-                    <thead><tr><th>Tema</th><th>Qué se aprende</th><th>Componente de Bootstrap</th></tr></thead>
-                    <tbody>
-                        <tr><td><b>2.1</b> Estructura y sintaxis</td><td>Reglas, selectores, propiedades y valores</td><td>Accordion, Table</td></tr>
-                        <tr><td><b>2.2</b> Tipos de incorporación</td><td>Interno, externo y en línea</td><td>Tabs, Table</td></tr>
-                        <tr><td><b>2.3</b> Indentación, herencia y comentarios</td><td>Código ordenado y propiedades heredadas</td><td>Accordion, List group</td></tr>
-                        <tr><td><b>2.4</b> Niveles de especificidad</td><td>Qué regla gana en un conflicto</td><td>Table, Progress</td></tr>
-                        <tr><td><b>2.5</b> Flexbox, Grid y Breakpoints</td><td>Maquetación y puntos de quiebre</td><td>Grid, Forms</td></tr>
-                        <tr><td><b>2.6</b> Media queries</td><td>Estilos según el tamaño de pantalla</td><td>Alert, Badge</td></tr>
-                        <tr><td><b>2.7</b> Pseudo-elementos</td><td>::before, ::after, ::first-letter...</td><td>Accordion, Form control</td></tr>
-                        <tr><td><b>2.8</b> Pseudo-clases</td><td>Estados y posiciones</td><td>Button, Form switch</td></tr>
-                        <tr><td><b>2.9</b> Z-index</td><td>Orden de las capas</td><td>Modal, Toast</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="d-flex flex-wrap gap-2 mt-3">
-                <a class="btn boton" href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank" rel="noopener"><i class="bi bi-book"></i> Documentación de CSS (MDN)</a>
-                <a class="btn boton" href="https://getbootstrap.com/" target="_blank" rel="noopener"><i class="bi bi-bootstrap"></i> Bootstrap</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== PIE DE PÁGINA ===== -->
-    <footer class="pie text-center py-4">
-        <p class="mb-1"><b>Guía de CSS</b> · Temas 2.1 al 2.9</p>
-        <p class="mb-0 small">Proyecto CSS · ADSO · Ficha 3404915</p>
-    </footer>
+    </div>
 
     <!-- Botón para volver arriba -->
-    <a href="#inicio" id="subir" class="subir d-none" aria-label="Volver arriba"><i class="bi bi-arrow-up"></i></a>
+    <a href="#" id="subir" class="subir d-none" aria-label="Volver arriba"><i class="bi bi-arrow-up"></i></a>
 
     <!-- Modal del tema 2.9 -->
     <div class="modal fade" id="modalZ" tabindex="-1">
@@ -1361,7 +1589,64 @@ form:focus-within { border-color: #E58FB1; }</code></pre>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Tema 2.5: cambiar flexbox en vivo
+        // ===== Navegación entre temas =====
+        function mostrarTema(id) {
+            try {
+                const boton = document.querySelector('#indice-tabs [data-bs-target="#' + id + '"]');
+                if (boton) bootstrap.Tab.getOrCreateInstance(boton).show();
+            } catch (e) {}
+        }
+
+        // Cualquier elemento con data-ir="p-3" lleva a ese tema
+        document.addEventListener('click', function (e) {
+            const el = e.target.closest('[data-ir]');
+            if (!el) return;
+            e.preventDefault();
+            mostrarTema(el.dataset.ir);
+        });
+
+        // Al cambiar de tema: subir al inicio, actualizar la URL y cerrar el índice en móvil
+        document.querySelectorAll('#indice-tabs [data-bs-toggle="pill"]').forEach(function (b) {
+            b.addEventListener('shown.bs.tab', function (e) {
+                const id = e.target.dataset.bsTarget.slice(1);
+                try { history.replaceState(null, '', '#' + id); } catch (err) {}
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                const off = bootstrap.Offcanvas.getInstance(document.getElementById('indice'));
+                if (off) off.hide();
+            });
+        });
+
+        // Si la URL trae un tema (por ejemplo #p-3), abrirlo
+        if (location.hash) mostrarTema(location.hash.slice(1));
+
+        // ===== Buscador del índice =====
+        document.getElementById('buscar').addEventListener('input', function (e) {
+            const q = e.target.value.toLowerCase().trim();
+            let hay = false;
+            document.querySelectorAll('#indice-tabs .nav-link[data-claves]').forEach(function (b) {
+                const texto = (b.textContent + ' ' + b.dataset.claves).toLowerCase();
+                const coincide = texto.includes(q);
+                b.classList.toggle('d-none', !coincide);
+                if (coincide) hay = true;
+            });
+            document.getElementById('sin-resultados').classList.toggle('d-none', hay);
+        });
+
+        // ===== Abrir todo / Cerrar todo en las cajas desplegables =====
+        function cambiarCajas(idAcordeon, abrir) {
+            document.querySelectorAll('#' + idAcordeon + ' .accordion-collapse').forEach(function (c) {
+                const instancia = bootstrap.Collapse.getOrCreateInstance(c, { toggle: false });
+                if (abrir) { instancia.show(); } else { instancia.hide(); }
+            });
+        }
+        document.querySelectorAll('[data-abrir]').forEach(function (b) {
+            b.addEventListener('click', function () { cambiarCajas(b.dataset.abrir, true); });
+        });
+        document.querySelectorAll('[data-cerrar]').forEach(function (b) {
+            b.addEventListener('click', function () { cambiarCajas(b.dataset.cerrar, false); });
+        });
+
+        // ===== Tema 2.5: flexbox en vivo =====
         const demoFlex = document.getElementById('demo-flex');
         document.getElementById('justify').addEventListener('change', function (e) {
             demoFlex.style.justifyContent = e.target.value;
@@ -1370,7 +1655,7 @@ form:focus-within { border-color: #E58FB1; }</code></pre>
             demoFlex.style.alignItems = e.target.value;
         });
 
-        // Tema 2.6: mostrar el ancho de la ventana
+        // ===== Tema 2.6: ancho de la ventana =====
         const ancho = document.getElementById('ancho');
         const tipo = document.getElementById('tipo-dispositivo');
         function actualizarAncho() {
@@ -1381,7 +1666,7 @@ form:focus-within { border-color: #E58FB1; }</code></pre>
         window.addEventListener('resize', actualizarAncho);
         actualizarAncho();
 
-        // Tema 2.9: capas, toast y botón de subir
+        // ===== Tema 2.9: capas, toast y botón de subir =====
         const capa1 = document.getElementById('capa1');
         const btnCapa = document.getElementById('btnCapa');
         btnCapa.addEventListener('click', function () {
@@ -1398,6 +1683,10 @@ form:focus-within { border-color: #E58FB1; }</code></pre>
         const subir = document.getElementById('subir');
         window.addEventListener('scroll', function () {
             subir.classList.toggle('d-none', window.scrollY < 300);
+        });
+        subir.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>
